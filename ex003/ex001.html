@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aprendendo o DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <div id="clique">Clique em mim!</div>
+    <div class="clique">Bem legal JavaScript</div>
+
+    <script>
+        var corpo = window.document.body
+        var paragrafo = window.document.getElementsByTagName('p')[0]
+        var d = window.document.getElementById('clique')
+        var d2 = document.getElementsByClassName('clique')[0]
+
+        d.style.background = 'white'
+        d.innerText = 'Aguardando...'
+        d2.innerText = 'JavaScript é maneiro'
+    </script>
+</body>
+</html>
