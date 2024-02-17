@@ -17,16 +17,20 @@
     <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
     <div id="clique">Clique em mim!</div>
     <div class="clique">Bem legal JavaScript</div>
+    <div id="seletor">Seletor</div>
 
     <script>
         var corpo = window.document.body
         var paragrafo = window.document.getElementsByTagName('p')[0]
         var d = window.document.getElementById('clique')
         var d2 = document.getElementsByClassName('clique')[0]
+        var d3 = document.querySelector('div#seletor')
 
         d.style.background = 'white'
         d.innerText = 'Aguardando...'
         d2.innerText = 'JavaScript é maneiro'
+        d3.style.background = 'gray'
+        d3.innerText = 'Bem vindo ao Seletor'
     </script>
 </body>
 </html>
