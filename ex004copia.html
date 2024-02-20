@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Descubra se você é Brasileiro</h1>
+    <p>Digite aqui o país onde você nasceu: <input type="text" name="txtbr" id="txtbr"></p>
+    <p><input type="button" value="Descobrir" onclick="checar()"></p>
+    <p class="res">
+
+    </p>
+
+    <script>
+        function checar() {
+            var txbr = document.querySelector('#txtbr')
+            var res = document.querySelector('.res')
+            var br = (txbr.value)
+
+            res.innerHTML = `<p>Vivendo em ${br}</p>`
+
+            if (br == 'Brasil') {
+                res.innerHTML += '<p>Você é Brasileiro!</p>'
+            } else {
+                res.innerHTML += '<p>Você não é Brasileiro!</p>'
+            }
+        }
+    </script>
+</body>
+</html>
