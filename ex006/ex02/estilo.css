@@ -10,9 +10,6 @@ body {
 
 header {
     text-align: center;
-}
-
-h1, p {
     color: white;
 }
 
@@ -27,4 +24,5 @@ section {
 
 footer {
     text-align: center;
+    color: white;
 }
