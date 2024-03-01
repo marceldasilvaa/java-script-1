@@ -6,11 +6,10 @@ function contar() {
 
     if (início.value.length == 0) {
         res.innerHTML = 'Impossível contar!'
-    } else {
+    } else if (início.value > 0) {
         while (início.value <= fim.value) {
-            res.innerHTML = início
+            res.innerHTML = `${início}`
             início++
         }
-        res.innerHTML = início
     }
 }
