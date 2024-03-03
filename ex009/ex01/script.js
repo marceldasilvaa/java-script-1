@@ -10,7 +10,8 @@ function contar() {
         var ini = Number(início.value)
         var fi = Number(fim.value)
         var pas = Number(passo.value)
-
-        res.innerHTML = `Contando: `
+        for(var c = ini; c <= fi; c += pas) {
+            res.innerHTML = `Contando: ${c}`
+        }
     }
 }
