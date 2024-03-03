@@ -4,12 +4,13 @@ function contar() {
     var passo = document.querySelector('#fpas')
     var res = document.querySelector('.res')
 
-    if (início.value.length == 0) {
+    if (início.value.length == 0 || fim.value.length == 0 || passo.value.length == 0) {
         res.innerHTML = 'Impossível contar!'
-    } else if (início.value > 0) {
-        while (início.value <= fim.value) {
-            res.innerHTML = `${início}`
-            início++
-        }
+    } else {
+        var ini = Number(início.value)
+        var fi = Number(fim.value)
+        var pas = Number(passo.value)
+
+        res.innerHTML = `Contando: `
     }
 }
