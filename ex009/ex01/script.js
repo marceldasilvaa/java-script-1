@@ -7,10 +7,10 @@ function contar() {
     if (início.value.length == 0 || fim.value.length == 0 || passo.value.length == 0) {
         res.innerHTML = 'Impossível contar!'
     } else {
-        var ini = Number(início.value)
-        var fi = Number(fim.value)
-        var pas = Number(passo.value)
-        for(var c = ini; c <= fi; c += pas) {
+        var i = Number(início.value)
+        var f = Number(fim.value)
+        var p = Number(passo.value)
+        for (var c = i; c <= f; c += p) {
             res.innerHTML = `Contando: ${c}`
         }
     }
