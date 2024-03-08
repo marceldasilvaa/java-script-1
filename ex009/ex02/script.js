@@ -6,8 +6,8 @@ function gerar() {
     if (num.value.length == 0) {
         alert('[ERRO] Digite qualquer número!')
     } else if (n >= 0) {
-        var opt = document.createElement('option')
-        opt.innerHTML = '1'
-        appendChild('option')
+        var res = document.querySelector('.res')
+        var m = 1 || 10
+        res.innerHTML = `${m}`
     }
 }
