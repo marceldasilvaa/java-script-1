@@ -1,4 +1,43 @@
-function gerar() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*function gerar() {
     var num = document.querySelector('#txtf')
     var n = Number(num.value)
     
@@ -7,15 +46,16 @@ function gerar() {
     } else if (n >= 0) {
         var sel = document.querySelector('#txts')
         var opt = document.createElement('option')
+        var p = n
         var x = ''
-        var r = n.value * x.value
+        var r = p * x
         //Primeiro option
         if (sel.options[0].selected) {
             sel.add(opt, sel.options[0])
             opt.value = 'Um'
-            for(var x = 1; n >= x; n = r) {
-                opt.text = `${n} x ${x} = ${r}`
+            for(var x = 2; p >= x; p = r) {
+                opt.text = `${n} X ${x} = ${r}`
             }
         }
     }
-}
+}*/
