@@ -13,10 +13,11 @@ function adc() {
         opt.text = `O número digitado foi ${n}.`
         opt.value = 'v1'
         sel.appendChild(opt)
-    } 
+    }
 }
 
 function final() {
+    let n = [Number(num.value)]
     let res = document.querySelector('.res')
     res.innerHTML = `Existem ${n.length} elementos dentro da caixa.`
 }
