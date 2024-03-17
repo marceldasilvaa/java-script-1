@@ -18,5 +18,5 @@ function adc() {
 
 function final() {
     let res = document.querySelector('.res')
-    res.innerHTML = 'Clicou!'
+    res.innerHTML = `Existem ${n.length} elementos dentro da caixa.`
 }
