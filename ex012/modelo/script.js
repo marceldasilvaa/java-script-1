@@ -7,7 +7,7 @@ function adc() {
     else if (num.value > 100 || num.value < 1) {
         alert('Valor inválido ou já encontrado na lista.')
     } else {
-        let n = [Number(num.value)]
+        let n = Number(num.value)
         let sel = document.querySelector('#self')
         let opt = document.createElement('option')
         opt.text = `O número digitado foi ${n}.`
@@ -17,7 +17,7 @@ function adc() {
 }
 
 function final() {
-    let n = [Number(num.value)]
+    let ele = opt
     let res = document.querySelector('.res')
-    res.innerHTML = `Existem ${n.length} elementos dentro da caixa.`
+    res.innerHTML = `Existem ${ele.length} elementos dentro da caixa.`
 }
