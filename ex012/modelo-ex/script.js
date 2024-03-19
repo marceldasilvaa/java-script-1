@@ -4,17 +4,32 @@ let res = document.querySelector('.res')
 let valores = []
 
 function adicionar() {
-    if (isNumber(num.value) && !inList(num.value)) {
-        alert('Tudo ok!')
+    if (isNumber(num.value) && !inList(num.value, valores)) {
+        valores = [num.value]
+        let opt = document.createElement('option')
+        opt.text = `O valor ${valores} foi adicionado.`
+        lista.appendChild(opt)
     } else {
-        alert('vas')
+        alert('Valor inválido ou já encontrado na lista.')
     }
 }
 
 function isNumber(n) {
-    if (n > 1 || n < 100) {
+    if (Number(n) >= 1 && Number(n) <= 100) {
         return true
     } else {
         return false
     }
+}
+
+function inList(n, l) {
+    if (l.indexOf(Number(n)) != -1) {
+        return true
+    } else {
+        return false
+    }
+}
+
+function finalizar() {
+    res.innerHTML = `Existem ${valores.length} elementos dentro da caixa.`
 }
