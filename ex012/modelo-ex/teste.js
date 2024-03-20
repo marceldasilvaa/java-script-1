@@ -1,5 +1,7 @@
-let valores = [1, 2, 3, 4, 5, 6]
+let nota = [1, 4, 6, 8, 8, 9, 9, 10, 10]
 
-opt = valores
+novanota = nota.filter(function (um, ja) {
+    return nota.indexOf(um) === ja
+})
 
-console.log(opt)
+console.log(novanota)
