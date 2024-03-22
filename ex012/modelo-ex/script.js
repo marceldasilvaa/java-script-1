@@ -4,7 +4,7 @@ let res = document.querySelector('.res')
 let valores = []
 
 function adicionar() {
-    if (isNumber(num.value) && !inList(num.value, valores) && isIgual(num.value, valores)) {
+    if (isNumber(num.value) && !inList(num.value, valores)) {
         valores = [num.value]
         let opt = document.createElement('option')
         opt.text = `O valor ${valores} foi adicionado.`
@@ -30,27 +30,11 @@ function inList(n, l) {
     }
 }
 
-function isIgual(n, v) {
-    if (Number(n) === Number(v)) {
-        return false
-    } else {
-        return true
-    }
-}
-
 function finalizar() {
-    if (taDentro(num.value, valores)) {
-        opt = []
-        res.innerHTML = `Ao todo, temos ${valores.length} números cadastrados.`
+    if (valores.length == 0) {
+        alert('Não é possível finalizar sem valores cadastrados.')
     } else {
-        alert('Não é possível finalizar sem valores adicionados.')
-    }
-}
-
-function taDentro(v, l) {
-    if (Number(v) === (Number(l))) {
-        return true
-    } else {
-        return false
+        let tot = valores.length
+        res.innerHTML = `Ao todo, temos ${tot} números cadastrados.`
     }
 }
