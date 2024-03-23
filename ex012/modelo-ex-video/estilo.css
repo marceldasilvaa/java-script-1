@@ -30,6 +30,10 @@ section {
     width: 150px;
 }
 
+.res > p {
+    color: black;
+}
+
 footer {
     text-align: center;
 }
