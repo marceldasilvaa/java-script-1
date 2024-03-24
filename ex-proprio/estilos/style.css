@@ -8,12 +8,17 @@ body {
     background-color: rgb(67, 134, 235);
 }
 
-div {
+section {
     background-color: white;
     padding: 5px;
     margin: auto;
     border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.365);
     max-width: 600px;
+}
+
+select {
+    width: 200px;
 }
 
 h1 {

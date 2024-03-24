@@ -4,17 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/style.css">
-    <title>Analisador de Nacionalidade</title>
+    <title>Exercício próprio</title>
 </head>
 <body>
-    <div>
-        <h1>Descubra se você é brasileiro(a)</h1>
-        <p>
-            <label for="fpais">
-                Nome (Digite o país que você nasceu):
-            </label>
-            <input type="text" name="fpais" id="fpais">
-        </p>
-    </div>
+    <section>
+        <div>
+            <h1>Analisador de Números</h1>
+            <p>
+                <label for="fpais">
+                    Nome (Digite o país que você nasceu):
+                </label>
+                <input type="number" name="fnum" id="fnum">
+                <input type="button" value="Adicionar" onclick="adicionar()">
+                <br><select name="flista" id="flista" size="6">
+
+                </select>
+                <br><input type="button" value="Analisar" onclick="Analisar()">
+            </p>
+        </div>
+        <div class="res">
+        
+        </div>
+    </section>
 </body>
 </html>
