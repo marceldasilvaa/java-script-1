@@ -4,17 +4,17 @@ let res = document.querySelector('.res')
 let valores = []
 
 function adicionar() {
-    if (taVazio(num.value)) {
-        alert('OK')
+    if (isVazio(num.value)) {
+        valores.push(num.value)
     } else {
         alert('Valor inválido ou já encontrado na lista.')
     }
 }
 
-function taVazio(n) {
-    if (Number(n) >= 1 && Number(n) <= 100) {
-        return true
-    } else {
+function isVazio(n) {
+    if (Number(n.length) == 0 || Number(n) <= 0) {
         return false
+    } else {
+        return true
     }
 }
