@@ -4,11 +4,16 @@ let res = document.querySelector('.res')
 let valores = []
 
 function adicionar() {
-    if (isVazio(num.value)) {
-        valores.push(num.value)
+    if (isVazio(num.value) && !inLista(num.value, valores)) {
+        valores.push(Number(num.value))
+        let opt = document.createElement('option')
+        opt.text = `Valor ${num.value} adicionado.`
+        lista.appendChild(opt)
     } else {
         alert('Valor inválido ou já encontrado na lista.')
     }
+    num.value = ''
+    num.focus()
 }
 
 function isVazio(n) {
@@ -17,4 +22,16 @@ function isVazio(n) {
     } else {
         return true
     }
+}
+
+function inLista(n, v) {
+    if (v.indexOf(Number(n)) != -1) {
+        return true
+    } else {
+        return false
+    }
+}
+
+function analisar() {
+    let res = document.querySelector('.res')
 }
