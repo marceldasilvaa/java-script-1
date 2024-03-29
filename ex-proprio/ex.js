@@ -34,4 +34,27 @@ function inLista(n, v) {
 
 function analisar() {
     let res = document.querySelector('.res')
+    let primo = Number(num.value) / 1 && Number(num.value) / Number(num.value)
+    if (isPrimo(primo)) {
+        res.innerHTML = ''
+        res.innerHTML += `O valor da divisão é ${primo}.`
+    } else {
+        alert('O valor digitado não é um número primo.')
+    }
+}
+
+function isPrimo(p) {
+    if (Number.isInteger(p)) {
+        return true
+    } else {
+        return false
+    }
+}
+
+for (let pos in valores) {
+    if (valores[pos] = isPrimo) {
+        valores[pos] = true
+    } else {
+        valores[pos] = false
+    }
 }
