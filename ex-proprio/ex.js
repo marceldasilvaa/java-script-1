@@ -34,7 +34,7 @@ function inLista(n, v) {
 
 function analisar() {
     let res = document.querySelector('.res')
-    let primo = Number(num.value) / 1 && Number(num.value) / Number(num.value)
+    let primo = Number(num.value) / 1
     if (isPrimo(primo)) {
         res.innerHTML = ''
         res.innerHTML += `O valor da divisão é ${primo}.`
@@ -44,7 +44,7 @@ function analisar() {
 }
 
 function isPrimo(p) {
-    if (Number.isInteger(p)) {
+    if (p == Number(num.value)) {
         return true
     } else {
         return false
