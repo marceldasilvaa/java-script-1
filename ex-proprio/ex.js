@@ -34,9 +34,7 @@ function inLista(n, v) {
 
 function analisar() {
     let res = document.querySelector('.res')
-    let n = Number(num.value)
-    let um = 1
-    let primo = n / um
+    
     if (primo == Number(num.value)) {
         res.innerHTML = `O valor da divisão é ${primo}, então o valor ${primo} é primo.`
     } else {
