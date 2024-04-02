@@ -35,9 +35,21 @@ function inLista(n, v) {
 function analisar() {
     let res = document.querySelector('.res')
     
-    if (primo == Number(num.value)) {
-        res.innerHTML = `O valor da divisão é ${primo}, então o valor ${primo} é primo.`
+    if (isPrimo(num.value)) {
+        res.innerHTML = `O valor digitado é primo!`
     } else {
-        alert('O valor digitado não é um número primo.')
+        alert('O valor digitado não é primo!')
+    }
+}
+
+function isPrimo(n) {
+    for (let numero = 2; numero <= n; numero++) {
+        let primo = true
+    }
+
+    for (let divisor = 2; divisor < numero; divisor++) {
+        if (divisor % numero === 0) {
+            let primo = false
+        }
     }
 }
