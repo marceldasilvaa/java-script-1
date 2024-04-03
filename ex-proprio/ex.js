@@ -36,20 +36,20 @@ function analisar() {
     let res = document.querySelector('.res')
     
     if (isPrimo(num.value)) {
-        res.innerHTML = `O valor digitado é primo!`
+        res.innerHTML = `O valor ${numero} é primo!`
     } else {
         alert('O valor digitado não é primo!')
     }
 }
 
 function isPrimo(n) {
-    for (let numero = 2; numero <= n; numero++) {
-        let primo = true
+    for (var numero = 2; numero <= Number(n); numero++) {
+        var primo = true
     }
 
     for (let divisor = 2; divisor < numero; divisor++) {
         if (divisor % numero === 0) {
-            let primo = false
+            primo = false
         }
     }
 }
