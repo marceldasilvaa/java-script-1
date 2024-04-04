@@ -34,24 +34,22 @@ function inLista(n, v) {
 
 function analisar() {
     let res = document.querySelector('.res')
-    
+
     if (isPrimo(num.value)) {
-        res.innerHTML = `O valor ${numero} é um número primo.`
+        for (let numero = 2; numero <= Number(num.value); numero++) {
+            res.innerHTML = `O valor ${isPrimo(numero)} é um número primo.`
+        }
     } else {
-        res.innerHTML = 'O valor digitado não é um número primo.'
+        res.innerHTML = 'Este número não é primo.'
     }
+    
 }
 
-function isPrimo(n) {
-    for (let numero = 2; numero <= Number(n); numero++) {
-        res.innerHTML = ''
-        return true
-    }
-
+function isPrimo(numero) {
     for (let divisor = 2; divisor < numero; divisor++) {
         if (divisor % numero === 0) {
-            res.innerHTML = ''
             return false
         }
     }
+    return true
 }
