@@ -17,7 +17,7 @@ function adicionar() {
 }
 
 function isVazio(n) {
-    if (Number(n.length) == 0 || Number(n) <= 0) {
+    if (Number(n.length) == 0 || Number(n) <= 1) {
         return false
     } else {
         return true
@@ -36,20 +36,22 @@ function analisar() {
     let res = document.querySelector('.res')
     
     if (isPrimo(num.value)) {
-        res.innerHTML = `O valor ${numero} é primo!`
+        res.innerHTML = `O valor ${numero} é um número primo.`
     } else {
-        alert('O valor digitado não é primo!')
+        res.innerHTML = 'O valor digitado não é um número primo.'
     }
 }
 
 function isPrimo(n) {
-    for (var numero = 2; numero <= Number(n); numero++) {
-        var primo = true
+    for (let numero = 2; numero <= Number(n); numero++) {
+        res.innerHTML = ''
+        return true
     }
 
     for (let divisor = 2; divisor < numero; divisor++) {
         if (divisor % numero === 0) {
-            primo = false
+            res.innerHTML = ''
+            return false
         }
     }
 }
