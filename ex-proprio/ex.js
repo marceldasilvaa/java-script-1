@@ -36,9 +36,7 @@ function analisar() {
     let res = document.querySelector('.res')
 
     if (isPrimo(num.value)) {
-        for (let numero = 2; numero <= Number(num.value); numero++) {
-            res.innerHTML = `O valor ${isPrimo(numero)} é um número primo.`
-        }
+        res.innerHTML = `O valor ${isPrimo(numero)} é um número primo.`
     } else {
         res.innerHTML = 'Este número não é primo.'
     }
@@ -46,10 +44,13 @@ function analisar() {
 }
 
 function isPrimo(numero) {
+    for (let numero = 2; numero <= Number(num.value); numero++) {
+        return true
+    }
+
     for (let divisor = 2; divisor < numero; divisor++) {
         if (divisor % numero === 0) {
             return false
         }
     }
-    return true
 }
