@@ -1,20 +1,20 @@
 let nome = "Manuel"
 let sobrenome = "Silva"
 let idade = 24
-const numCliente = 294057
-
-let valorEmprestimo = 150000
-let taxaDeJuros = 0.10
-let numAnos = 6
-let ehBomPagador = true
+let valorEmprestimo
+let taxaDeJuros
+let juros
+let numAnos
+let montante
 
 /*  Calcular montante = valorEmprestimo + juros
     juros = valorEmprestimo * taxaDeJuros * numAnos
 */
 
-let juros = valorEmprestimo * taxaDeJuros * numAnos
-let montante = valorEmprestimo + juros
-
-console.log(juros)
-console.log(montante)
-console.log(`Para o cliente ${nome} que pegou ${valorEmprestimo} emprestado, ao final de ${numAnos} anos pagando uma taxa de ${taxaDeJuros} ao ano, ele terá que desembolsar R$${montante}.`)
+for (let c = 0; c < 3; c++) {
+    valorEmprestimo = parseInt(prompt("Digite o valor do emprestimo"))
+    numAnos = parseInt(prompt("Digite o numero de anos"))
+    juros = valorEmprestimo * taxaDeJuros * numAnos
+    montante = valorEmprestimo + juros
+    console.log(montante)
+}
