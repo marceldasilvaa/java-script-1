@@ -8,7 +8,7 @@ let taxaDeJuros
 let numAnos
 let ehBomPagador
 
-function cadastraCliente(nomeCliente, sobrenomeCliente, idadeCliente, valorEmprestimoCliente, numAnosCliente, ehBomPagadorCliente) {
+function cadastraCliente(nomeCliente, sobrenomeCliente, idadeCliente, valorEmprestimoCliente, numAnosCliente = 2, ehBomPagadorCliente = false) {
     nome = nomeCliente
     sobrenome = sobrenomeCliente
     idade = idadeCliente
@@ -30,7 +30,7 @@ function taxaCliente(idadeCliente) {
     }
 }
 
-cadastraCliente('Manoel', 'Silva', 25, 150000, 2, true)
+cadastraCliente('Manoel', 'Silva', 25, 150000, 5)
 console.log(nome)
 console.log(sobrenome)
 console.log(idade)
@@ -38,3 +38,11 @@ console.log(valorEmprestimo)
 console.log(numAnos)
 console.log(ehBomPagador)
 console.log(taxaDeJuros)
+
+// Parametro rest - Usado quando nao se sabe quantos parametros serao passados na funcao.
+
+function exibeNumeros(...numeros) {
+    console.log(numeros)
+}
+
+exibeNumeros(2, 18, 48, 284, 1488)
