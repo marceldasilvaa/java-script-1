@@ -1,10 +1,12 @@
-function investigacao() {
+
+function investiga() {
     let numSim = 0;
-    let pergunta1 = prompt('Você telefonou para a vítima?');
+    let pergunta1 = prompt('Você telefonou para a vitima?');
     let pergunta2 = prompt('Você esteve no local do crime?');
     let pergunta3 = prompt('Você mora perto da vitima?');
     let pergunta4 = prompt('Você devia para a vitima?');
-    let pergunta5 = prompt('Você ja trabalhou com a vitima?');
+    let pergunta5 = prompt('Você ja trabalhou para a vitima?');
+
     if (pergunta1 === 'sim') {
         numSim += 1;
     }
@@ -20,18 +22,19 @@ function investigacao() {
     if (pergunta5 === 'sim') {
         numSim += 1;
     }
-    if (numSim === 0 || 1) {
-        return `Com ${numSim} sim, você é um inocente.`;
-    }
-    if (numSim === 2) {
-        return `Com ${numSim} sim, você é um suspeito.`;
-    }
-    if (numSim === 3 || 4) {
-        return `Com ${numSim} sim, você é um cúmplice.`;
-    }
-    if (numSim === 5) {
-        return `Com ${numSim} sim, você é um assassino.`;
+    return numSim;
+}
+
+function classifica(numSim) {
+    if (numSim === 0 || numSim === 1) {
+        console.log('Inocente');
+    } else if (numSim === 2) {
+        console.log('Suspeito');
+    } else if (numSim === 3 || numSim === 4) {
+        console.log('Cúmplice');
+    } else {
+        console.log('Assassino');
     }
 }
 
-console.log(investigacao())
+classifica(investiga())
