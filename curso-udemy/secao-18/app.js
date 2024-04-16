@@ -32,10 +32,35 @@ function taxaCliente(idadeCliente) {
     }
 }
 
-cadastraCliente('Manoel', 'Silva', 25, 150000, 5, true, ['Manuel', 'Cauan', 'Thales'])
-console.log(nome)
-console.log(avalistas)
-console.log(avalistas[0])
-console.log(avalistas[1])
-console.log(avalistas[2])
-console.log(idade)
+cadastraCliente('Manoel', 'Silva', 25, 150000, 5, true, ['Manoel', 'Cauan', 'Thales'])
+
+function adicionaAvalista(avalista) {
+    avalistas.push(avalista);
+}
+
+function removeAvalista() {
+    avalistas.pop();
+}
+
+function editaAvalista(indice, nomeAvalista) {
+    avalistas[indice] = nomeAvalista;
+}
+
+function ordenaAvalista() {
+    return avalistas.sort();
+}
+
+adicionaAvalista('Lucas');
+adicionaAvalista('Conne');
+adicionaAvalista('Amanda');
+console.log(avalistas);
+console.log(avalistas.length);
+
+removeAvalista();
+removeAvalista();
+console.log(avalistas);
+
+editaAvalista(0, 'Manoel Silva');
+console.log(avalistas[0]);
+
+console.log(ordenaAvalista());
