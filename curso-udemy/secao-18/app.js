@@ -50,17 +50,25 @@ function ordenaAvalista() {
     return avalistas.sort();
 }
 
+function exibeAvalista() {
+    avalistas.forEach((avalista, indice) => {
+        console.log(`O ${indice + 1}º avalista é: ${avalista}`)
+    });
+}
+
 adicionaAvalista('Lucas');
 adicionaAvalista('Conne');
 adicionaAvalista('Amanda');
-console.log(avalistas);
-console.log(avalistas.length);
+//console.log(avalistas);
+//console.log(avalistas.length);
 
 removeAvalista();
 removeAvalista();
-console.log(avalistas);
+//console.log(avalistas);
 
 editaAvalista(0, 'Manoel Silva');
-console.log(avalistas[0]);
+//console.log(avalistas[0]);
 
-console.log(ordenaAvalista());
+//console.log(ordenaAvalista());
+
+exibeAvalista()
