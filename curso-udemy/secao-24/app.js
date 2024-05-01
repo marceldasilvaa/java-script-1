@@ -7,12 +7,16 @@ const carro = {
     motor: {
         cavalos: 200,
         cilindras: 2.0
+    },
+    kmPercorridos: function() {
+        return `O ${carro.nome} percorre ${carro.consumo * carro.capacidadeTanque} KM com um tanque cheio.`;
     }
 };
 
 carro.ano = 2022;
-console.log(carro.nome);
-console.log(carro.cor);
-console.log(carro.ano);
-console.log(carro.motor.cavalos);
-console.log(carro.motor.cilindras);
+carro.valor = 280000;
+carro.consumo = 11;
+carro.capacidadeTanque = 50;
+delete carro.emplacado;
+console.log(carro);
+console.log(carro.kmPercorridos());
