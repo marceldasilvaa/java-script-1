@@ -13,6 +13,19 @@ const carro = {
     }
 };
 
+const chaves = Object.keys(carro);
+console.log(chaves);
+
+const valores = Object.values(carro);
+console.log(valores);
+
+const tuplas = Object.entries(carro);
+console.log(tuplas);
+
+const carro3 = Object.assign(carro);
+console.log(carro3);
+
+/*
 carro.ano = 2022;
 carro.valor = 280000;
 carro.consumo = 11;
@@ -20,3 +33,4 @@ carro.capacidadeTanque = 50;
 delete carro.emplacado;
 console.log(carro);
 console.log(carro.kmPercorridos());
+*/
