@@ -47,6 +47,8 @@ function taxaCliente(idadeCliente) {
 }
 
 const cliente1 = cadastraCliente('Mauricio', 'Silva', 27, 150000, 5, true, ['Alice', 'Cléber', 'Amanda'], );
+
+/*
 cliente1.adicionaAvalistas('Paula');
 cliente1.adicionaAvalistas('Roberto');
 cliente1.removeAvalista();
@@ -55,3 +57,20 @@ cliente1.editaAvalista('Alice Alves', 0);
 cliente1.ordenaAvalista();
 cliente1.adicionaAvalistas('Daniel');
 cliente1.exibeAvalista();
+*/
+
+function adicionaInfLogin(cliente, email, senha) {
+    if(email.indexOf("@") !== -1 && senha.length > 5) {
+        cliente.login = {
+            email: email,
+            senha: senha
+        }
+        return cliente;
+    } else {
+        return 'Credenciais inválidas';
+    }
+}
+
+console.log(adicionaInfLogin(cliente1, "edval@gmail.com", "edv47638"));
+console.log(adicionaInfLogin(cliente1, 'edval.com', 'edva4535'));
+console.log(adicionaInfLogin(cliente1, 'edval@gmail.com', '4352'));
