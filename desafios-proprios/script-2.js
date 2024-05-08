@@ -30,7 +30,7 @@ function validaSalario(salarioCliente) {
     }
 }
 
-function validaSexo() {
+function validaSexo(sexoCliente) {
     
 }
 
