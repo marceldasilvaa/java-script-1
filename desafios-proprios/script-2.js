@@ -22,5 +22,18 @@ function validaIdade(idadeCliente) {
     }
 }
 
+function validaSalario(salarioCliente) {
+    if (salarioCliente < 0) {
+        return 'Informacao invalida.';
+    } else {
+        return salarioCliente;
+    }
+}
+
+function validaSexo() {
+    
+}
+
 console.log(validaNome('Marcel'));
 console.log(validaIdade(19));
+console.log(validaSalario(3000));
