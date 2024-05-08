@@ -1,18 +1,26 @@
-function validaCadastro(nome, idade, salario, sexo, estadoCivil) {
-    for (const letra of nome) {
-        if(nome.length > 3) {
-            return nome;
+/*
+function validaCadastro(nomeCliente, idade, salario, sexo, estadoCivil) {
+    
+}
+*/
+
+function validaNome(nomeCliente) {
+    for (const letra of nomeCliente) {
+        if (nomeCliente.length > 3) {
+            return nomeCliente;
         } else {
-            return 'Cadastro invalido';
-        }
-    }
-    for (const numero in idade) {
-        if (idade < 0 && idade > 150) {
-            return 'Cadastro invalido';
-        } else {
-            return idade;
+            return 'Cadastro invalido.';
         }
     }
 }
 
-console.log(validaCadastro('Marcel', 19));
+function validaIdade(idadeCliente) {
+    if (idadeCliente < 0 && idadeCliente > 150) {
+        return 'Cadastro invalido.'
+    } else {
+        return idadeCliente;
+    }
+}
+
+console.log(validaNome('Marcel'));
+console.log(validaIdade(19));
