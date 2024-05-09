@@ -31,9 +31,31 @@ function validaSalario(salarioCliente) {
 }
 
 function validaSexo(sexoCliente) {
-    
+    if (sexoCliente === 'masculino') {
+        return 'M';
+    } else if (sexoCliente === 'feminino') {
+        return 'F';
+    } else {
+        return 'Sexo nao informado.'
+    }
+}
+
+function validaEstadoCivil(estadoCivil) {
+    if (estadoCivil === 'solteiro') {
+        return 'S';
+    } else if (estadoCivil === 'casado') {
+        return 'C';
+    } else if (estadoCivil === 'viuvo') {
+        return 'V';
+    } else if (estadoCivil === 'divorciado') {
+        return 'D';
+    } else {
+        return 'Cadastro invalido.';
+    }
 }
 
 console.log(validaNome('Marcel'));
 console.log(validaIdade(19));
 console.log(validaSalario(3000));
+console.log(validaSexo('masculino'));
+console.log(validaEstadoCivil('divorciado'));
