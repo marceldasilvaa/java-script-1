@@ -2,7 +2,7 @@
 
 function cadastraCliente(nomeCliente, sobrenomeCliente, idadeCliente, valorEmprestimoCliente, 
     numAnosCliente = 2, ehBomPagadorCliente = false, avalistasCliente) {
-        cliente = {
+        const cliente = {
             nome: nomeCliente,
             sobrenome: sobrenomeCliente,
             idade: idadeCliente,
