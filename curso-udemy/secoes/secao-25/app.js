@@ -46,7 +46,7 @@ function taxaCliente(idadeCliente) {
     }
 }
 
-//const cliente1 = cadastraCliente('Mauricio', 'Silva', 27, 150000, 5, true, ['Alice', 'Cléber', 'Amanda']);
+const cliente1 = cadastraCliente('Mauricio', 'Silva', 27, 150000, 5, true, ['Alice', 'Cléber', 'Amanda']);
 
 /*
 cliente1.adicionaAvalistas('Paula');
@@ -60,7 +60,7 @@ cliente1.exibeAvalista();
 */
 
 function credenciaisInvalidas(mensagem) {
-    this.name = 'Credenciais Invalidas.';
+    this.nome = 'Credenciais Invalidas';
     this.mensagem = mensagem;
 }
 
@@ -77,14 +77,30 @@ function adicionaInfLogin(cliente, email, senha) {
 }
 
 try {
-    const cliente1 = cadastraCliente('Mauricio', 'Silva', 27, 150000, 5, true, ['Alice', 'Cléber', 'Amanda']);
-    console.log(adicionaInfLogin(cliente1, 'marcelsilva@gmail.com', 'Mar7813'));
+    console.log(cadastraCliente('Mauricio', 'Silva', 27, 150000, 5, true, ['Alice', 'Cléber', 'Amanda']));
+    console.log(adicionaInfLogin(cliente1, 'marcelalves@gmail.com', 'mar8493'));
 } catch(erro) {
     console.log(erro);
-    console.log('Nome:', erro.name);
-    console.log('Mensagem:', erro.mensagem);
 } finally {
-    console.log('Deseja realizar uma nova operação?');
+    console.log('Deseja adicionar mais alguma informação?');
+}
+
+try {
+    console.log(adicionaInfLogin(cliente1, 'marcelalvesgmail.com', 'mar39482'));
+} catch(erro) {
+    console.log(erro);
+    console.log(erro.nome);
+    console.log(erro.mensagem);
+} finally {
+    console.log('Deseja adicionar mais alguma informação?');
+}
+
+try {
+    console.log(adicionaInfLogin(cliente1, 'marcelalves@gmail.com', 'mar23'));
+} catch(erro) {
+    console.log(erro);
+} finally {
+    console.log('Deseja adicionar mais alguma informação?');
 }
 
 //console.log(adicionaInfLogin(cliente1, "edval@gmail.com", "edv47638"));
