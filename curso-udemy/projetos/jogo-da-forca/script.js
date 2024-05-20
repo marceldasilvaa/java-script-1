@@ -21,18 +21,38 @@ const numTentativas = 7;
 /* Valor para opacidade dos olhos */
 const opacidadeOlhos = 0.3;
 
+const categorias = {
+    filmes: ['transformers', 'carros', 'lassie', 'homem aranha', 'a ara do gelo', 'top gun maverick'],
+    frutas: ['maça', 'banana', 'melancia', 'melao', 'mamao', 'uva', 'laranja', 'pessego'],
+    Animais: ['cachorro', 'gato', 'leao', 'guepardo', 'lobo', 'orca', 'beluga', 'baleia', 'golfinho'],
+    profissoes: ['programador', 'administrador', 'engenheiro', 'pescador', 'medico', 'professor']
+}
+
+function retornaArrayCategorias() {
+    return Object.keys(categorias);
+}
+
+function retornaCategorias() {
+    const arrayCategorias = retornaArrayCategorias();
+    let indiceCategorias = Math.floor(Math.random() * arrayCategorias.length);
+    return arrayCategorias[indiceCategorias];
+}
+
+function exibeCategoria() {
+    categoria.innerHTML = retornaCategorias();
+}
 
 /*
 Recebe o evento do teclado e passa apenas o valor da letra para a função tentativa
 */
-function retornaLetra(e){ 
+function retornaLetra(e) {
     tentativa(e.key);
 }
 
 /*
 Desenha a parte do corpo corrente
 */
-function desenhaBoneco(){
+function desenhaBoneco() {
     partesBoneco[indiceBoneco].classList.remove("hide");
     indiceBoneco++; 
 }
@@ -40,7 +60,7 @@ function desenhaBoneco(){
 /* 
 Desenha os olhos do personagem
 */
-function desenhaOlhos(){
+function desenhaOlhos() {
     olhos.forEach((olho => {
         olho.style.opacity = 1;
         olho.style.zIndex = 10;
@@ -50,7 +70,7 @@ function desenhaOlhos(){
 /*
 Oculta as partes do corpo do personagem
 */
-function ocultaBoneco(){
+function ocultaBoneco() {
     olhos.forEach((olho => {
         olho.style.opacity = opacidadeOlhos; 
     }));
@@ -62,9 +82,11 @@ function ocultaBoneco(){
 /*
 Inicia as configurações do jogo
 */
-function iniciaJogo(){
+function iniciaJogo() {
     indiceBoneco = 0;
     letrasErradasArray = [];
+    ocultaBoneco();
+    exibeCategoria();
     letrasErradas.innerHTML = "Letras erradas: ";
     window.addEventListener("keypress", retornaLetra);
 }
