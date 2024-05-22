@@ -4,7 +4,7 @@ const categoria = document.querySelector("#category");
 const letrasErradas = document.querySelector(".wrongLetters");
 /* Elemento HTML referente a palavra oculta
    Utilizaremos esse mesmo elemento para exibir as mensagens do jogo*/
-   const palavraInterface = document.querySelector(".dashes");
+const palavraInterface = document.querySelector(".dashes");
 /* Array com elementos HTML referentes aos olhos do personagem */
 const olhos = Array.from(document.querySelectorAll(".eyes"));
 /* Array com elementos HTML referentes as partes do corpo */
@@ -34,12 +34,36 @@ function retornaArrayCategorias() {
 
 function retornaCategorias() {
     const arrayCategorias = retornaArrayCategorias();
-    let indiceCategorias = Math.floor(Math.random() * arrayCategorias.length);
+    let indiceCategorias = retornaNumAleatorio(arrayCategorias.length);
     return arrayCategorias[indiceCategorias];
 }
 
 function exibeCategoria() {
     categoria.innerHTML = retornaCategorias();
+}
+
+function retornaNumAleatorio(max) {
+    return Math.floor(Math.random() * max);
+}
+
+function definePalavraProposta() {
+    const palavrasArray = categorias[categoria.innerHTML];
+    const indicePalavrasArray = retornaNumAleatorio(palavrasArray.length);
+    palavraProposta = palavrasArray[indicePalavrasArray];
+    console.log(palavraProposta);
+    ocultaPalavra();
+}
+
+function ocultaPalavra() {
+    let palavraOcultada = '';
+    for(let c = 0; c < palavraProposta.length; c++) {
+        palavraOcultada += '-';
+    }
+    exibePalavraInterface(palavraOcultada);
+}
+
+function exibePalavraInterface(palavra) {
+    palavraInterface.innerHTML = palavra;
 }
 
 /*
@@ -87,6 +111,7 @@ function iniciaJogo() {
     letrasErradasArray = [];
     ocultaBoneco();
     exibeCategoria();
+    definePalavraProposta();
     letrasErradas.innerHTML = "Letras erradas: ";
     window.addEventListener("keypress", retornaLetra);
 }
