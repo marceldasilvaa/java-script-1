@@ -22,7 +22,7 @@ const numTentativas = 7;
 const opacidadeOlhos = 0.3;
 
 const categorias = {
-    filmes: ['transformers', 'carros', 'lassie', 'homem aranha', 'a ara do gelo', 'top gun maverick'],
+    filmes: ['transformers', 'carros', 'lassie'],
     frutas: ['maça', 'banana', 'melancia', 'melao', 'mamao', 'uva', 'laranja', 'pessego'],
     Animais: ['cachorro', 'gato', 'leao', 'guepardo', 'lobo', 'orca', 'beluga', 'baleia', 'golfinho'],
     profissoes: ['programador', 'administrador', 'engenheiro', 'pescador', 'medico', 'professor']
@@ -75,6 +75,18 @@ function tentativa(letra) {
         if(partesBoneco.length > indiceBoneco) {
             desenhaBoneco();
         }
+    }
+    verificaFimDeJogo();
+}
+
+function verificaFimDeJogo() {
+    if(!palavraInterface.innerHTML.includes('-')) {
+        exibePalavraInterface('Você venceu!');
+        window.removeEventListener("keypress", retornaLetra);
+    } else if(letrasErradasArray.length >= numTentativas) {
+        desenhaOlhos();
+        exibePalavraInterface('Você perdeu!');
+        window.removeEventListener("keypress", retornaLetra);
     }
 }
 
