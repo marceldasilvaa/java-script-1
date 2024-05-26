@@ -21,89 +21,6 @@ const numTentativas = 7;
 /* Valor para opacidade dos olhos */
 const opacidadeOlhos = 0.3;
 
-const categorias = {
-    filmes: ['transformers', 'carros', 'lassie'],
-    frutas: ['maça', 'banana', 'melancia', 'melao', 'mamao', 'uva', 'laranja', 'pessego'],
-    Animais: ['cachorro', 'gato', 'leao', 'guepardo', 'lobo', 'orca', 'beluga', 'baleia', 'golfinho'],
-    profissoes: ['programador', 'administrador', 'engenheiro', 'pescador', 'medico', 'professor']
-}
-
-function retornaArrayCategorias() {
-    return Object.keys(categorias);
-}
-
-function retornaCategorias() {
-    const arrayCategorias = retornaArrayCategorias();
-    let indiceCategorias = retornaNumAleatorio(arrayCategorias.length);
-    return arrayCategorias[indiceCategorias];
-}
-
-function exibeCategoria() {
-    categoria.innerHTML = retornaCategorias();
-}
-
-function retornaNumAleatorio(max) {
-    return Math.floor(Math.random() * max);
-}
-
-function definePalavraProposta() {
-    const palavrasArray = categorias[categoria.innerHTML];
-    const indicePalavrasArray = retornaNumAleatorio(palavrasArray.length);
-    palavraProposta = palavrasArray[indicePalavrasArray];
-    console.log(palavraProposta);
-    ocultaPalavra();
-}
-
-function ocultaPalavra() {
-    let palavraOcultada = '';
-    for(let c = 0; c < palavraProposta.length; c++) {
-        palavraOcultada += '-';
-    }
-    exibePalavraInterface(palavraOcultada);
-}
-
-function exibePalavraInterface(palavra) {
-    palavraInterface.innerHTML = palavra;
-}
-
-function tentativa(letra) {
-    if(palavraProposta.includes(letra)) {
-        atualizaPalavraInterface(letra);
-    } else {
-        letrasErradasArray.push(letra);
-        letrasErradas.innerHTML = `Letras erradas: ${letrasErradasArray}`;
-        if(partesBoneco.length > indiceBoneco) {
-            desenhaBoneco();
-        }
-    }
-    verificaFimDeJogo();
-}
-
-function verificaFimDeJogo() {
-    if(!palavraInterface.innerHTML.includes('-')) {
-        exibePalavraInterface('Você venceu!');
-        window.removeEventListener("keypress", retornaLetra);
-    } else if(letrasErradasArray.length >= numTentativas) {
-        desenhaOlhos();
-        exibePalavraInterface('Você perdeu!');
-        window.removeEventListener("keypress", retornaLetra);
-    }
-}
-
-function atualizaPalavraInterface(letra) {
-    let palavraAux = '';
-    for(let i = 0; i < palavraProposta.length; i++) {
-        if(palavraProposta[i] === letra) {
-            palavraAux += letra;
-        } else if(palavraInterface.innerHTML[i] != '-') {
-            palavraAux += palavraInterface.innerHTML[i];
-        } else {
-            palavraAux += '-';
-        }
-    }
-    exibePalavraInterface(palavraAux);
-}
-
 /*
 Recebe o evento do teclado e passa apenas o valor da letra para a função tentativa
 */
@@ -148,9 +65,6 @@ function iniciaJogo() {
     indiceBoneco = 0;
     letrasErradasArray = [];
     ocultaBoneco();
-    exibeCategoria();
-    definePalavraProposta();
-    letrasErradas.innerHTML = "Letras erradas: ";
     window.addEventListener("keypress", retornaLetra);
 }
 
