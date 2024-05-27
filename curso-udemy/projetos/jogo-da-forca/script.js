@@ -21,6 +21,37 @@ const numTentativas = 7;
 /* Valor para opacidade dos olhos */
 const opacidadeOlhos = 0.3;
 
+const categorias = {
+    filmes: ['transformers', 'carros', 'lassie', 'rambo'],
+    profissoes: ['administrador', 'programador', 'engenheiro', 'rambo'],
+    animais: ['gato', 'cachorro', 'leao', 'orca', 'beluga'],
+    cores: ['amarelo', 'roxo', 'azul', 'vermelho', 'preto', 'branco']
+}
+
+function retornaCategoria() {
+    return Object.keys(categorias);
+}
+
+function retornaCategoriaAleatoria() {
+    const retornaCategorias = retornaCategoria();
+    const retornaIndiceAleatorioCategorias = retornaNumAleatorio(retornaCategorias.length);
+    return retornaCategorias[retornaIndiceAleatorioCategorias];
+}
+
+function exibeCategoria() {
+    return categoria.innerHTML = retornaCategoriaAleatoria();
+}
+
+function retornaNumAleatorio(max) {
+    return Math.floor(Math.random() * max);
+}
+
+function retornaPalavra() {
+    const palavraCategoria = categorias[categoria.innerHTML];
+    const indicePalavraCategoria = retornaNumAleatorio(palavraCategoria.length);
+    palavraProposta = palavraCategoria[indicePalavraCategoria];
+}
+
 /*
 Recebe o evento do teclado e passa apenas o valor da letra para a função tentativa
 */
@@ -65,6 +96,7 @@ function iniciaJogo() {
     indiceBoneco = 0;
     letrasErradasArray = [];
     ocultaBoneco();
+    exibeCategoria();
     window.addEventListener("keypress", retornaLetra);
 }
 
