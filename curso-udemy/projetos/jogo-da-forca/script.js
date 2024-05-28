@@ -52,6 +52,8 @@ function retornaPalavra() {
     palavraProposta = palavraCategoria[indicePalavraCategoria];
 }
 
+console.log(retornaPalavra());
+
 /*
 Recebe o evento do teclado e passa apenas o valor da letra para a função tentativa
 */
