@@ -52,7 +52,15 @@ function retornaPalavra() {
     palavraProposta = palavraCategoria[indicePalavraCategoria];
 }
 
-console.log(retornaPalavra());
+function ocultaPalavra() {
+    let palavraOcultada = '';
+    for(let c = 0; c < palavraProposta.length; c++) {
+        palavraOcultada += '-';
+    }
+    return palavraOcultada;
+}
+
+console.log(ocultaPalavra());
 
 /*
 Recebe o evento do teclado e passa apenas o valor da letra para a função tentativa
