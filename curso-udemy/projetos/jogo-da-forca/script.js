@@ -50,17 +50,10 @@ function retornaPalavra() {
     const palavraCategoria = categorias[categoria.innerHTML];
     const indicePalavraCategoria = retornaNumAleatorio(palavraCategoria.length);
     palavraProposta = palavraCategoria[indicePalavraCategoria];
+    return palavraProposta;
 }
 
-function ocultaPalavra() {
-    let palavraOcultada = '';
-    for(let c = 0; c < palavraProposta.length; c++) {
-        palavraOcultada += '-';
-    }
-    return palavraOcultada;
-}
-
-console.log(ocultaPalavra());
+console.log(retornaPalavra());
 
 /*
 Recebe o evento do teclado e passa apenas o valor da letra para a função tentativa
