@@ -48,12 +48,23 @@ function retornaNumAleatorio(max) {
 
 function retornaPalavra() {
     const palavraCategoria = categorias[categoria.innerHTML];
-    const indicePalavraCategoria = retornaNumAleatorio(palavraCategoria.length);
+    let indicePalavraCategoria = retornaNumAleatorio(palavraCategoria.length);
     palavraProposta = palavraCategoria[indicePalavraCategoria];
-    return palavraProposta;
+    console.log(palavraProposta);
+    ocultaPalavra();
 }
 
-console.log(retornaPalavra());
+function ocultaPalavra() {
+    let palavraOcultada;
+    for(let c = 0; c < palavraProposta.length; c++) {
+        palavraOcultada += '-';
+    }
+    exibePalavraInterface(palavraOcultada);
+}
+
+function exibePalavraInterface(palavra) {
+    palavraInterface.innerHTML = palavra;
+}
 
 /*
 Recebe o evento do teclado e passa apenas o valor da letra para a função tentativa
@@ -100,6 +111,7 @@ function iniciaJogo() {
     letrasErradasArray = [];
     ocultaBoneco();
     exibeCategoria();
+    retornaPalavra();
     window.addEventListener("keypress", retornaLetra);
 }
 
