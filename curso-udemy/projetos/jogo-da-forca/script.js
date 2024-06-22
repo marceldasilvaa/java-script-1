@@ -50,7 +50,6 @@ function retornaPalavra() {
     const palavraCategoria = categorias[categoria.innerHTML];
     let indicePalavraCategoria = retornaNumAleatorio(palavraCategoria.length);
     palavraProposta = palavraCategoria[indicePalavraCategoria];
-    console.log(palavraProposta);
     ocultaPalavra();
 }
 
