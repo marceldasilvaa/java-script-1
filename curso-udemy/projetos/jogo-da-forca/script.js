@@ -23,7 +23,7 @@ const opacidadeOlhos = 0.3;
 
 const categorias = {
     filmes: ['transformers', 'carros', 'lassie', 'rambo'],
-    profissoes: ['administrador', 'programador', 'engenheiro', 'rambo'],
+    profissoes: ['administrador', 'programador', 'engenheiro', 'editor'],
     animais: ['gato', 'cachorro', 'leao', 'orca', 'beluga'],
     cores: ['amarelo', 'roxo', 'azul', 'vermelho', 'preto', 'branco']
 }
@@ -50,11 +50,14 @@ function retornaPalavra() {
     const palavraCategoria = categorias[categoria.innerHTML];
     let indicePalavraCategoria = retornaNumAleatorio(palavraCategoria.length);
     palavraProposta = palavraCategoria[indicePalavraCategoria];
+    console.log(palavraProposta)
     ocultaPalavra();
 }
 
+//
+
 function ocultaPalavra() {
-    let palavraOcultada;
+    let palavraOcultada = '';
     for(let c = 0; c < palavraProposta.length; c++) {
         palavraOcultada += '-';
     }
@@ -64,6 +67,8 @@ function ocultaPalavra() {
 function exibePalavraInterface(palavra) {
     palavraInterface.innerHTML = palavra;
 }
+
+
 
 /*
 Recebe o evento do teclado e passa apenas o valor da letra para a função tentativa
