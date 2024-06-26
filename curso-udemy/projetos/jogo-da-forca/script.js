@@ -68,7 +68,21 @@ function exibePalavraInterface(palavra) {
     palavraInterface.innerHTML = palavra;
 }
 
+function tentativa(letra) {
+    if(palavraProposta.includes(letra)) {
+        
+    } else {
+        
+    }
+}
 
+function atualilzaPalavraInterface(letra) {
+    let atualizaPalavra = '';
+    for(let c = 0; c < palavraOcultada.length; c++) {
+        atualizaPalavra += letra;
+    }
+    return atualizaPalavra;
+}
 
 /*
 Recebe o evento do teclado e passa apenas o valor da letra para a função tentativa
