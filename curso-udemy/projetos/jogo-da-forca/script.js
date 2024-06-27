@@ -70,18 +70,24 @@ function exibePalavraInterface(palavra) {
 
 function tentativa(letra) {
     if(palavraProposta.includes(letra)) {
-        
+        atualilzaPalavraInterface(letra);
     } else {
         
     }
 }
 
 function atualilzaPalavraInterface(letra) {
-    let atualizaPalavra = '';
-    for(let c = 0; c < palavraOcultada.length; c++) {
-        atualizaPalavra += letra;
+    let palavraAux = '';
+    for(let c = 0; c < palavraProposta.length; c++) {
+        if(palavraProposta[c] === letra) {
+            palavraAux += letra;
+        } else if(palavraInterface.innerHTML[c] != '-') {
+            palavraAux += palavraInterface.innerHTML[c];
+        } else {
+            palavraAux += '-';
+        }
     }
-    return atualizaPalavra;
+    exibePalavraInterface(palavraAux);
 }
 
 /*
