@@ -72,7 +72,7 @@ function tentativa(letra) {
     if(palavraProposta.includes(letra)) {
         atualilzaPalavraInterface(letra);
     } else {
-        
+        letrasErradasArray.push(letra)
     }
 }
 
