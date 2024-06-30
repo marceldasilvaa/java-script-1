@@ -21,6 +21,9 @@ const numTentativas = 7;
 /* Valor para opacidade dos olhos */
 const opacidadeOlhos = 0.3;
 
+/*
+Categorias do jogo selecionadas aleatóriamente e exibidas na interface
+*/
 const categorias = {
     filmes: ['transformers', 'carros', 'lassie', 'rambo'],
     profissoes: ['administrador', 'programador', 'engenheiro', 'editor'],
@@ -42,10 +45,16 @@ function exibeCategoria() {
     return categoria.innerHTML = retornaCategoriaAleatoria();
 }
 
+/*
+Retorna indice aleatório
+*/
 function retornaNumAleatorio(max) {
     return Math.floor(Math.random() * max);
 }
 
+/*
+Palavras selecionadas aleatóriamente, ocultadas e exibidas na interface 
+*/
 function retornaPalavra() {
     const palavraCategoria = categorias[categoria.innerHTML];
     let indicePalavraCategoria = retornaNumAleatorio(palavraCategoria.length);
@@ -53,8 +62,6 @@ function retornaPalavra() {
     console.log(palavraProposta)
     ocultaPalavra();
 }
-
-//
 
 function ocultaPalavra() {
     let palavraOcultada = '';
@@ -68,6 +75,9 @@ function exibePalavraInterface(palavra) {
     palavraInterface.innerHTML = palavra;
 }
 
+/*
+Verifica se as tentativas estão corretas ou não
+*/
 function tentativa(letra) {
     if(palavraProposta.includes(letra)) {
         atualilzaPalavraInterface(letra);
@@ -88,6 +98,10 @@ function atualilzaPalavraInterface(letra) {
         }
     }
     exibePalavraInterface(palavraAux);
+}
+
+function exibeLetraErrada(letra) {
+    
 }
 
 /*
