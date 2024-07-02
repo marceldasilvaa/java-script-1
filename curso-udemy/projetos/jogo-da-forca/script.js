@@ -102,7 +102,9 @@ function atualilzaPalavraInterface(letra) {
     exibePalavraInterface(palavraAux);
 }
 
-
+function finalJogo() {
+    
+}
 
 /*
 Recebe o evento do teclado e passa apenas o valor da letra para a função tentativa
