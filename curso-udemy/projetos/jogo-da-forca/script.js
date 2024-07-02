@@ -73,6 +73,7 @@ function ocultaPalavra() {
 
 function exibePalavraInterface(palavra) {
     palavraInterface.innerHTML = palavra;
+    letrasErradas.innerHTML = `Letras erradas: ${letrasErradasArray}`
 }
 
 /*
@@ -83,6 +84,7 @@ function tentativa(letra) {
         atualilzaPalavraInterface(letra);
     } else {
         letrasErradasArray.push(letra)
+        atualilzaPalavraInterface(letra)
     }
 }
 
@@ -100,9 +102,7 @@ function atualilzaPalavraInterface(letra) {
     exibePalavraInterface(palavraAux);
 }
 
-function exibeLetraErrada(letra) {
-    
-}
+
 
 /*
 Recebe o evento do teclado e passa apenas o valor da letra para a função tentativa
