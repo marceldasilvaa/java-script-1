@@ -59,7 +59,6 @@ function retornaPalavra() {
     const palavraCategoria = categorias[categoria.innerHTML];
     let indicePalavraCategoria = retornaNumAleatorio(palavraCategoria.length);
     palavraProposta = palavraCategoria[indicePalavraCategoria];
-    console.log(palavraProposta)
     ocultaPalavra();
 }
 
@@ -85,7 +84,11 @@ function tentativa(letra) {
     } else {
         letrasErradasArray.push(letra)
         atualilzaPalavraInterface(letra)
+        if(partesBoneco.length > indiceBoneco) {
+            desenhaBoneco()
+        }
     }
+    verificaFimDeJogo()
 }
 
 function atualilzaPalavraInterface(letra) {
@@ -98,8 +101,23 @@ function atualilzaPalavraInterface(letra) {
         } else {
             palavraAux += '-';
         }
+        
     }
     exibePalavraInterface(palavraAux);
+}
+
+/*
+Verifica se o jogo terminou e se o player venceu ou não
+*/
+function verificaFimDeJogo() {
+    if(!palavraInterface.innerHTML.includes('-')) {
+        exibePalavraInterface('Você Venceu!')
+        window.removeEventListener('keypress', retornaLetra)
+    } else if(letrasErradasArray.length >= numTentativas) {
+        desenhaOlhos()
+        exibePalavraInterface('Você Perdeu!')
+        window.removeEventListener('keypress', retornaLetra)
+    }
 }
 
 /*
