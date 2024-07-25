@@ -1,3 +1,4 @@
+/*
 // Exibir pai do Elemento desejado
 const paleta1 = document.querySelector('#paleta1')
 console.log(paleta1.parentNode)
@@ -34,7 +35,23 @@ console.log(paleta4)
 // Adicionando uma classe ao elemento criado
 paleta4.classList.add('paleta')
 
-/*
+
 Remover o elemento criado de uma classe
 paleta4.classList.remove('paleta')
+
+
+// Removendo elemento HTML
+
+const paletas_div = document.querySelector('.paletas_div')
+const paleta2 = document.querySelector('#paleta2')
+
+paletas_div.removeChild(paleta2)
 */
+
+// Removendo todos os filhos do elemento HTML
+
+const paletas_div = document.querySelector('.paletas_div')
+
+while (paletas_div.firstElementChild) {
+    paletas_div.removeChild(paletas_div.firstElementChild)
+}
