@@ -19,11 +19,31 @@ function exibeFilmes() {
 }
 
 function adicionaFilme(filme) {
-    setTimeout(() => {
-        filmes.push(filme)
-    }, 3000)
-    console.log(filmes)
+    const promise = (resolve, reject) => {
+        setTimeout(() => {
+            if (filme.nome === "") {
+                reject(new Error("Nome inválido"))
+            } else {
+                filmes.push(filme)
+                resolve(filme)
+            }
+        }, 3000)
+    }
+    return new Promise(promise)
 }
 
-adicionaFilme({nome: "Homem Aranha", genero: "Ação"})
-exibeFilmes()
+async function funcaoAsync() {
+    try {
+        const homemAranha = await adicionaFilme({nome: "Homem Aranha", genero: "Ação"})
+        console.log(homemAranha)
+        await adicionaFilme({nome: "Velozes e Furiosos 1", genero: "Ação"})
+        await adicionaFilme({nome: "Velozes e Furiosos 2", genero: "Ação"})
+        await adicionaFilme({nome: "Velozes e Furiosos 3", genero: "Ação"})
+        await adicionaFilme({nome: "Velozes e Furiosos 4", genero: "Ação"})
+        exibeFilmes()
+    } catch(erro) {
+        console.error(erro)
+    }
+}
+
+funcaoAsync()
