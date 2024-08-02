@@ -9,11 +9,11 @@ const duracao = document.querySelector("#duracao")
 const genero = document.querySelector("#genero")
 const atores = document.querySelector("#atores")
 const diretor = document.querySelector("#diretor")
-const apiKey = "49eaa790";
+const apiKey = "c5cb67de0e696e3f07a8ad2c32642c19";
 const imgDefault = "./default_image.png";
 
 async function buscaFilme(nomeBusca){
-     const resposta = await fetch(`http://www.omdbapi.com/?i=${nomeBusca}&apikey=${apiKey}`);
+     const resposta = await fetch(`'https://api.themoviedb.org/3/movie/${nomeBusca}?language=en-US', options`);
      return resposta.json();
 }
 
