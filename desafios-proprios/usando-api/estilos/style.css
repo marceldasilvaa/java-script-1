@@ -92,4 +92,5 @@ img {
     display: block;
     margin: 0 auto;
     width: 90%;
+    border-radius: 5px;
 }
