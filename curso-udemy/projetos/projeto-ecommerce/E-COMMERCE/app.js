@@ -1,6 +1,8 @@
 const form = document.forms.cadastro;
 const mensagemErro = document.querySelector("#mensagemErro");
-const {nome, celular, cpf, email, senha, confirmaSenha, numCartao, codigoSeg, dataValidade} = form;
+const cartaoVisa = "imagens/cartao_visa.png";
+const cartaoMastercard = "imagens/cartao_mastercard.jpg"
+const {nome, celular, cpf, email, senha, confirmaSenha, numCartao, codigoSeg, dataValidade, imgCartao} = form;
 
 form.addEventListener('submit', (e) => {
     e.preventDefault(); 
@@ -26,7 +28,7 @@ function validaCelular(){
 }
 
 function validaCPF(){
-        const regex = /^[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$/;
+        const regex = /^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}$/;
     if(regex.test(cpf.value)){
         console.log(cpf.value);
     }else{
@@ -35,7 +37,7 @@ function validaCPF(){
 }
 
 function validaEmail(){
-    const regex = /^[a-z]*[@][a-z]*[.][com]$/;
+    const regex = /\w+\@gmail+\.com+/;
     if(regex.test(email.value)){
         console.log(email.value);
     }else{
@@ -44,7 +46,7 @@ function validaEmail(){
 }
 
 function validaSenha(){
-    //const regex = ;
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!#@%&]).{2,15}$/;
     if(regex.test(senha.value)){
         console.log(senha.value);
     }else{
@@ -61,8 +63,9 @@ function validaConfirmaSenha(){
 }
 
 function validaCartao(){
-    //const regex = ;
+    const regex = /^[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}$/;
     if(regex.test(numCartao.value)){
+        validaBandeiraCartao(numCartao.value);
         console.log(numCartao.value);
     }else{
         throw new Error("Numero de cartão inválido");
@@ -70,20 +73,26 @@ function validaCartao(){
 }
 
 function validaData(){
-    //const regex = ;
+    const regex = /^(\d{4})[/]((0[1-9]|1[012]))[/]((0[1-9]|[12][0-9]|3[01]))$/;
     if(regex.test(dataValidade.value)){
-        console.log(dataValidade.value);
+        console.log(dataValidade.value.replace(regex, '$3/$2/$1'));
     }else{
         throw new Error("Data de validade do cartão inválida");
     }
 }
 
 function validaCodigo(){
-    //const regex = ;
+    const regex = /^[0-9]{3}$/;
     if(regex.test(codigoSeg.value)){
         console.log(codigoSeg.value);
     }else{
-        throw new Error("Códido de segurança inválido");
+        throw new Error("Código de segurança inválido");
+    }
+}
+
+function validaBandeiraCartao(numCartao) {
+    if (numCartao.indexOf("4", 0)) {
+        imgCartao.appendChild(cartaoVisa);
     }
 }
 
@@ -93,6 +102,12 @@ function validaFormulario(){
         validaCelular();
         validaCPF();
         validaEmail();
+        validaSenha();
+        validaConfirmaSenha();
+        validaCartao();
+        validaCodigo();
+        validaData();
+        validaBandeiraCartao();
         alert("Dados cadastrados com sucesso!!");
     }catch(erro){
         mensagemErro.innerHTML = erro.message;
