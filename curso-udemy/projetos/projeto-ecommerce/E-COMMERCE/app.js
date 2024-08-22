@@ -28,7 +28,7 @@ function validaCelular(){
 }
 
 function validaCPF(){
-        const regex = /^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}$/;
+    const regex = /^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}$/;
     if(regex.test(cpf.value)){
         console.log(cpf.value);
     }else{
