@@ -27,12 +27,33 @@ btnSalvar.addEventListener('click', () => {
     limparCampos();
 })
 
+function buscaEndereco() {
+    fetch(`https://viacep.com.br/ws/${cepbusca.value}/json/`)
+        .then((resposta) => {
+            return resposta.json();
+        })
+        .then((resposta) => {
+            preencheCampos(resposta);
+        })
+        .catch((erro) => {
+            console.error(erro);
+        })
+}
+
 function validaCEP() {
     const regex = /^([0-9]{8})$/;
     if (regex.test(cepbusca.value)) {
-            console.log(cepbusca.value);
+            buscaEndereco();
     } else {
         throw new Error("O CEP informado não é válido.");
+    }
+}
+
+function preencheCampos(endereço) {
+    for(const campo in endereço) {
+        if (document.querySelector("#" + campo)) {
+            document.querySelector("#" + campo).value = endereço[campo];
+        }
     }
 }
 
