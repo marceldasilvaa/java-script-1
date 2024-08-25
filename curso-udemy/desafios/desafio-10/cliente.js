@@ -4,7 +4,7 @@ export default class Cliente {
     #idade;
     #valorEmprestimo;
     #anosEmprestimo;
-    #avalistas;
+    #avalistas = [];
 
     constructor(nome, sobrenome, idade, valorEmprestimo, anosEmprestimo, avalistas) {
         this.#nome = nome;
@@ -38,7 +38,17 @@ export default class Cliente {
     get avalistas() {
         return this.#avalistas;
     }
-}
 
-//taxadejuros
+    taxarCliente(idade) {
+        if (idade >= 18 && idade <= 25) {
+            return 0.09;
+        } else if (idade >= 26 && idade <= 35) {
+            return 0.08;
+        } else if (idade >= 36 && idade <=50) {
+            return 0.07;
+        } else {
+            return 0.06;
+        }
+    }
+}
 //ehbompagador

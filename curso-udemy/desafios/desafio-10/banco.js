@@ -10,31 +10,39 @@ const botaoAddEmprestimo = document.querySelector("#botaoEmprestimo");
 const botaoLimpar = document.querySelector("#botaoLimpar");
 const botaoCalculaTaxa = document.querySelector("#botaoCalculaTaxa");
 
-botaoAddEmprestimo.addEventListener('click', () => geraCliente());
-botaoLimpar.addEventListener('click', () => limpaDados());
-botaoCalculaTaxa.addEventListener('click', () => calculaTaxaDeJuros());
-
 window.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         geraCliente();
     }
 })
+botaoAddEmprestimo.addEventListener('click', () => geraCliente());
+botaoLimpar.addEventListener('click', () => limpaDados());
+botaoCalculaTaxa.addEventListener('click', () => calculaTaxaDeJuros());
 
 function geraCliente() {
     let cliente = new Cliente(nomeCliente.value, sobrenomeCliente.value, Number(idadeCliente.value), Number(valorEmprestimo.value), Number(anosEmprestimo.value), avalistasCliente.value);
-    return cliente;
-}
-
-function adicionaCliente() {
-    const cliente = geraCliente();
-    exibeDados(cliente);
-    calculaTaxaDeJuros();
-}
-
-function exibeDados(cliente) {
+    return adicionaCliente(cliente);
     
 }
 
-function calculaTaxaDeJuros() {
+function adicionaCliente(cliente) {
+    exibeDados(cliente);
+    calculaTaxaDeJuros(cliente);
+}
 
+function exibeDados(cliente) {
+    console.log(cliente);
+}
+
+function limpaDados() {
+    nomeCliente.value = "";
+    sobrenomeCliente.value = "";
+    idadeCliente.value = "";
+    valorEmprestimo.value = "";
+    anosEmprestimo.value = "";
+    avalistasCliente.value = "";
+}
+
+function calculaTaxaDeJuros(cliente) {
+    console.log(cliente.taxarCliente(Number(idadeCliente.value)));
 }
