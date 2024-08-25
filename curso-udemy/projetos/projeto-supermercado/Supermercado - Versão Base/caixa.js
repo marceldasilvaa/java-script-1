@@ -1,3 +1,9 @@
+import Carrinho from "./carrinho.js";
+import Produto from "./produtos/produto.js";
+import Alimentacao from "./produtos/alimentacao.js";
+import Limpeza from "./produtos/limpeza.js";
+import Carro from "./produtos/carro.js";
+
 const nomeProduto = document.querySelector("#nomeProd");
 const valorProduto = document.querySelector("#valorProd");
 const tipoProduto = document.querySelector("#tipoProd");
@@ -9,11 +15,47 @@ const botaoDesconto = document.querySelector("#aplicaDesconto");
 const valorTotal = document.querySelector("#valorTotal");
 const valorFinal = document.querySelector("#valorFinal");
 const listaProd = document.querySelector(".lista_prod");
+const carrinho = new Carrinho();
 
 botaoAdd.addEventListener('click', () => adicionaProduto());
 botaoRemove.addEventListener('click', () => removeProduto());
 botaoDesconto.addEventListener('click', () => aplicaDesconto());
 tipoProduto.addEventListener('input',() => flagDataValidade());
+
+function criaProduto() {
+    let produto;
+    if (tipoProduto.value === "alimentacao") {
+        produto = new Alimentacao(nomeProduto.value, Number(valorProduto.value), codigoProduto.value, tipoProduto.value, dataProduto.value);
+    } else if (tipoProduto.value === "carro") {
+        produto = new Carro(nomeProduto.value, Number(valorProduto.value), codigoProduto.value, tipoProduto.value);
+    } else if (tipoProduto.value === "limpeza") {
+        produto = new Limpeza(nomeProduto.value, Number(valorProduto.value), codigoProduto.value, tipoProduto.value);
+    } else if (tipoProduto.value === "outro") {
+        produto = new Produto(nomeProduto.value, Number(valorProduto.value), codigoProduto.value, tipoProduto.value);
+    }
+    return produto;
+}
+
+function adicionaProduto() {
+    const produto = criaProduto();
+    carrinho.adicionarProduto(produto);
+    exibeProdutos();
+    atualizaValorTotal();
+}
+
+function removeProduto() {
+    carrinho.removerProduto();
+    exibeProdutos();
+    atualizaValorTotal();
+}
+
+function atualizaValorTotal() {
+    valorTotal.textContent = `Valor Total: R$ ${carrinho.valor}`;
+}
+
+function aplicaDesconto() {
+    valorFinal.textContent = `Valor Final: R$ ${carrinho.calcularValorFinal()}`;
+}
 
 function exibeProdutos(){
     let saida = "";
@@ -30,5 +72,3 @@ function flagDataValidade(){
         document.querySelector("#dataProd").style.display = "none";
     }
 }
-
-

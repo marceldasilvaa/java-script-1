@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerência do Banco</title>
+    <link rel="stylesheet" href="estilos/style.css">
+</head>
+<body>
+    <div class="caixa">
+        <div class="container">
+            <div class="capturaDados">
+                <h1 class="titulo">Faça seu empréstimo</h1>
+                <hr></hr>
+                <p>Insira seus dados abaixo:</p>
+                <input class="dadosCliente" type="text" id="nomeCliente" placeholder="Nome">
+                <input class="dadosCliente" type="text" id="sobrenomeCliente" placeholder="Sobrenome">
+                <input class="dadosCliente" type="number" id="idadeCliente" placeholder="Idade">
+                <input class="dadosCliente" type="number" id="emprestimoCliente" placeholder="Valor do empréstimo">
+                <input class="dadosCliente" type="number" id="anosEmprestimo" placeholder="Anos do empréstimo">
+                <input class="dadosCliente" type="text" id="avalistasDoCliente" placeholder="Seus Avalistas">
+                <button class="botao" id="botaoEmprestimo" type="submit" value="emprestimo">Fazer Empréstimo</button>
+                <button class="botao" id="botaoLimpar" type="submit" value="limparDados">Limpar Dados</button>
+                <button class="botao" id="botaoCalculaTaxa" value="calcularTaxa" type="submit">Calcular Taxa</button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="insereDados">
+                <h2 class="titulo">Dados do seu empréstimo</h2>
+                <hr></hr>
+                <div class="containerDados">
+                    <h3 class="tituloDados">Nome:</h3>
+                    <h3 class="tituloDados">Valor:</h3>
+                    <h3 class="tituloDados">Taxa:</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./banco.js"></script>
+</html>

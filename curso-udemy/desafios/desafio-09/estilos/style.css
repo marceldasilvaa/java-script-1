@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: rgba(77, 17, 151, 0.833);
+}
+
+.caixa {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container {
+    height: 600px;
+    width: 350px;
+    max-width: 800px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.45);
+}
+
+.containerDados {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-top: 5px;
+    padding: 3px;
+    width: 90%;
+    background-color: rgb(192, 192, 192);
+    border-radius: 20px;
+}
+
+h1.titulo {
+    font-size: 1.8em;
+    text-align: center;
+    color: rgba(77, 17, 151, 0.928);
+}
+
+h2.titulo {
+    font-size: 1.7em;
+    text-align: center;
+    color: rgba(77, 17, 151, 0.928);
+}
+
+h3.tituloDados {
+    color: rgba(77, 17, 151, 0.928);
+}
+
+hr {
+    margin: 0 auto;
+    width: 80%;
+}
+
+p {
+    margin-top: 10px;
+    text-indent: 5px;
+    font-size: 1.1em;
+}
+
+.dadosCliente {
+    background-color: rgba(192, 192, 192, 0.532);
+    font-weight: bolder;
+    margin-top: 10px;
+    margin-left: 5px;
+    padding: 15px;
+    width: 80%;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.421);
+}
+
+.dadosCliente:focus {
+    outline: none;
+}
+
+.botao {
+    display: block;
+    margin: 0 auto;
+    padding: 17px;
+    margin-top: 5px;
+    width: 85%;
+    background-color: rgba(77, 17, 151, 0.833);
+    font-size: 1em;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.442);
+}
