@@ -7,9 +7,8 @@ export default class Carrinho {
             this.#listaDeProdutos = ["Maça", "Sabonete", "Desodorante"];
             this.#valorTotal = 35;
             Carrinho.instance = this;
-        } else {
-            return Carrinho.instance;
         }
+        return Carrinho.instance;
     }
 
     adicionaProduto(){
