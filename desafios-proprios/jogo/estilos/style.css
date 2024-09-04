@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.map {
+    background: black;
+    height: 100%;
+    width: 100%;
+}
+
+.player {
+    color: white;
+    border-radius: 50%;
+}
