@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/media-query.css">
     <title>Veterinária</title>
 </head>
 <body>
@@ -17,8 +18,11 @@
                     <input type="text" placeholder="Idade real / presumida" id="idadeAnimal" class="formulario">
                     <input type="text" placeholder="Espécie" id="especieAnimal" class="formulario">
                     <input type="text" placeholder="Raça" id="racaAnimal" class="formulario">
-                    <input type="text" placeholder="Sexo" id="sexoAnimal" class="formulario">
-                    <button type="submit" id="botaoAdiciona">Agendar</button>
+                    <select placeholder="Sexo" id="sexoAnimal" class="formulario">
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                    </select>
+                    <button type="submit" id="botaoAdiciona" class="botaoAgenda">Agendar</button>
                 </form>
             </section>
             <section class="informacoesAgendamento">
