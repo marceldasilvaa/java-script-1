@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Aurora from "./assets/aurora-boreal.png";
 import MaganeData from './components/MaganeData';
+import ListRender from "./components/ListRender";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <img src={Aurora} alt="Aurora Boreal" />
       </div>
       <MaganeData />
+      <ListRender />
     </div>
   );
 }
