@@ -8,7 +8,7 @@
 
 :root {
     --corCorpo: rgb(60, 11, 100);
-    --corSegundoTitulo: rgb(64, 231, 249);
+    --corTitulo: rgb(107, 16, 226);
 }
 
 /* corpo */
@@ -36,14 +36,15 @@ section {
 }
 
 section.cadastro {
-    background-color: rgba(255, 255, 255, 0.574);
+    opacity: .8;
     height: 400px;
     width: 250px;
     border: 1px solid white;
 }
 
-section > h2 {
-    color: var(--corSegundoTitulo);
+section.cadastro > h2,
+section.informacoesAgendamento > h2 {
+    color: var(--corTitulo);
     font-size: 1.5em;
     text-align: center;
     margin-top: 15px;
@@ -51,7 +52,7 @@ section > h2 {
 }
 
 section.informacoesAgendamento {
-    background-color: rgba(255, 255, 255, 0.574);
+    opacity: .8;
     height: 400px;
     width: 250px;
     margin: 15px 0px;

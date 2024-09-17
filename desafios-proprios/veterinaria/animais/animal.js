@@ -1,11 +1,7 @@
-class Animal {
-    nome;
-    idade;
-    sexo;
-
-    constructor(nome, idade, sexo) {
-        this.nome = nome;
-        this.idade = idade;
-        this.sexo = sexo;
+export default class Animal {
+    
+    
+    constructor(especie, idade, raca, sexo) {
+        super(especie, idade, raca, sexo)
     }
 }
