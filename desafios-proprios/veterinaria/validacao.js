@@ -1,5 +1,3 @@
-import Animal from "./animais/animal.js";
-
 export default class Validacao {
     #especie;
     #idade;
