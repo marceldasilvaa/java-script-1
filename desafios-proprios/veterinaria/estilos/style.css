@@ -37,14 +37,14 @@ section {
 
 section.cadastro {
     opacity: .8;
-    height: 400px;
+    height: 420px;
     width: 250px;
     border: 1px solid white;
 }
 
 section.cadastro > h2,
 section.informacoesAgendamento > h2 {
-    color: var(--corTitulo);
+    color: white;
     font-size: 1.5em;
     text-align: center;
     margin-top: 15px;
@@ -53,7 +53,7 @@ section.informacoesAgendamento > h2 {
 
 section.informacoesAgendamento {
     opacity: .8;
-    height: 400px;
+    height: 420px;
     width: 250px;
     margin: 15px 0px;
     border: 1px solid white;
@@ -80,6 +80,13 @@ section.informacoesAgendamento {
 
 .formulario:hover {
     background: white;
+}
+
+p.msgErro {
+    font-size: .9em;
+    text-align: center;
+    color: red;
+    margin-bottom: 7px;
 }
 
 /* botão */
