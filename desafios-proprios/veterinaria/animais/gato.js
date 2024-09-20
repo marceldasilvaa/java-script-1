@@ -8,9 +8,9 @@ export default class Gato extends Animal {
         this.#doutor = doutor;    
     }
 
-    doutorBn(especie, doutor) {
-        if(especie == "Gato") {
-            return alert(`O atendimento do seu gato está marcado com nosso doutor ${doutor}`);
+    doutorMarcel(especie, doutor) {
+        if(especie == "Passaro") {
+            return `O atendimento do seu gato está marcado com nosso doutor ${doutor}`;
         } else {
             throw new Error("Não foi possível marcar o atendimento");
         }

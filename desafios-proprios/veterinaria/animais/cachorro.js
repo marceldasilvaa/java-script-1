@@ -9,10 +9,10 @@ export default class Cachorro extends Animal {
     }
 
     doutorRenan(especie, doutor) {
-        if(especie == "Cachorro") {
-            return alert(`O atendimento do seu cachorro está marcado com nosso doutor ${doutor}`);
+        if(especie == "Passaro") {
+            return `O atendimento do seu cachorro está marcado com nosso doutor ${doutor}`;
         } else {
-            throw new Error("Não foi possível marcar o atendimento!!!!!");
+            throw new Error("Não foi possível marcar o atendimento");
         }
     }
 

@@ -17,6 +17,8 @@ const passaro = new Passaro();
 const doutorRenan = "Renan";
 const doutorBn = "Bruno";
 const doutorMarcel = "Marcel";
+const formulario = document.querySelector("form");
+const section = document.querySelector(".informacoesAgendamento");
 
 window.addEventListener('keypress', (e) => {
     if(e.key === 'Enter') {
@@ -27,8 +29,8 @@ botaoAgenda.addEventListener('click', () => agendar());
 
 function agendar() {
     retornaDoutor();
-    // validaCampos();
-    // validaDoutor();
+    validaCampos();
+    exibeDoutor();
 }
 
 function retornaDoutor() {
@@ -40,19 +42,20 @@ function retornaDoutor() {
     } else if(especie.value === "Passaro") {
         doutor = new Passaro(especie.value, Number(idade.value), raca.value, sexo.value);
     } else {
-        doutor = criaMsgErro();
+        doutor = exibeMsgErro();
     }
     return doutor;
 }
 
-function criaMsgErro() {
-    const formulario = document.querySelector("form");
+/*
+function exibeMsgErro() {
     const msgErro = document.createElement("p");
     msgErro.classList.add("msgErro");
     formulario.insertBefore(msgErro, botaoAgenda);
 
     return msgErro.innerText = `Só atendemos pássaros, gatos ou cachorros`;
 }
+*/
 
 function validaCampos() {
     try {
@@ -67,30 +70,40 @@ function validaCampos() {
 
 function validaSexo() {
     if(document.querySelector("#sexoAnimal").value === "Masculino") {
-        alert("Tudo ok!");
+        console.log(sexo.value);
     } else {
-        alert("Tudo ok fem!");
+        console.log(sexo.value);
     }
 }
 
 function validaDoutor() {
     if(especie.value === "Cachorro") {
         try {
-            cachorro.doutorRenan(especie.value, doutorRenan);
+            const exibeDoutorRenan = cachorro.doutorRenan(especie.value, doutorRenan);
+            return exibeDoutorRenan;
         } catch(erro) {
             return alert(`${erro}`);
         }
     } else if(especie.value === "Gato") {
         try {
-            gato.doutorBn(especie.value, doutorBn);
+            const exibeDoutorMarcel = gato.doutorMarcel(especie.value, doutorMarcel);
+            return exibeDoutorMarcel;
         } catch(erro) {
             return alert(`${erro}`);
         }
     } else if(especie.value === "Passaro") {
         try {
-            passaro.doutorMarcel(especie.value, doutorMarcel);
+            const exibeDoutorBn = passaro.doutorBn(especie.value, doutorBn);
+            return exibeDoutorBn;
         } catch(erro) {
             return alert(`${erro}`);
         }
     }
+}
+
+function exibeDoutor() {
+    const msgDoutor = document.createElement("p");
+    msgDoutor.classList.add("infoAgenda");
+    msgDoutor.innerText = "";
+    validaDoutor();
 }

@@ -8,9 +8,9 @@ export default class Passaro extends Animal {
         this.#doutor = doutor;
     }
 
-    doutorMarcel(especie, doutor) {
+    doutorBn(especie, doutor) {
         if(especie == "Passaro") {
-            return alert(`O atendimento do seu passaro está marcado com nosso doutor ${doutor}`);
+            return `O atendimento do seu pássaro está marcado com nosso doutor ${doutor}`;
         } else {
             throw new Error("Não foi possível marcar o atendimento");
         }

@@ -14,7 +14,7 @@ export default class Validacao {
     validaEspecie(especie) {
         const regex = /^[A-Z][a-z]+$/;
         if(regex.test(especie)) {
-            alert("Tudo Ok");
+            console.log(especie);
         } else {
             throw new Error("O primeiro argumento deve conter uma letra maiúscula");
         }
@@ -23,7 +23,7 @@ export default class Validacao {
     validaIdade(idade) {
         const regex = /^(\d){1,2}$/;
         if(regex.test(idade)) {
-            alert("Tudo ok!");
+            console.log(idade);
         } else {
             throw new Error("Idade inválida");
         }
@@ -32,7 +32,7 @@ export default class Validacao {
     validaRaca(raca) {
         const regex = /^[A-Z][a-z]+$/;
         if(regex.test(raca)) {
-            alert("Tudo ok!");
+            console.log(raca);
         } else {
             throw new Error("O primeiro argumento deve ser uma letra maiúscula");
         }
