@@ -29,8 +29,8 @@ botaoAgenda.addEventListener('click', () => agendar());
 
 function agendar() {
     retornaDoutor();
-    validaCampos();
     exibeDoutor();
+    validaCampos();
 }
 
 function retornaDoutor() {
@@ -76,7 +76,8 @@ function validaSexo() {
     }
 }
 
-function validaDoutor() {
+/*
+function validaDoutor() { 
     if(especie.value === "Cachorro") {
         try {
             const exibeDoutorRenan = cachorro.doutorRenan(especie.value, doutorRenan);
@@ -100,10 +101,13 @@ function validaDoutor() {
         }
     }
 }
+*/
 
 function exibeDoutor() {
-    const msgDoutor = document.createElement("p");
-    msgDoutor.classList.add("infoAgenda");
-    msgDoutor.innerText = "";
-    validaDoutor();
+    try {
+        const drMarcel = gato.doutorMarcel(especie.value, doutorMarcel);
+        return section.appendChild(drMarcel);
+    } catch(erro) {
+        alert(`${erro}`);
+    }
 }
