@@ -29,8 +29,8 @@ botaoAgenda.addEventListener('click', () => agendar());
 
 function agendar() {
     retornaDoutor();
-    exibeDoutor();
     validaCampos();
+    validaDoutor();
 }
 
 function retornaDoutor() {
@@ -39,7 +39,7 @@ function retornaDoutor() {
         doutor = new Cachorro(especie.value, Number(idade.value), raca.value, sexo.value);
     } else if(especie.value === "Gato") {
         doutor = new Gato(especie.value, Number(idade.value), raca.value, sexo.value);
-    } else if(especie.value === "Passaro") {
+    } else if(especie.value === "Pássaro") {
         doutor = new Passaro(especie.value, Number(idade.value), raca.value, sexo.value);
     } else {
         doutor = exibeMsgErro();
@@ -47,15 +47,13 @@ function retornaDoutor() {
     return doutor;
 }
 
-/*
 function exibeMsgErro() {
     const msgErro = document.createElement("p");
     msgErro.classList.add("msgErro");
-    formulario.insertBefore(msgErro, botaoAgenda);
+    msgErro.innerText = `Só atendemos pássaros, gatos ou cachorros`;
 
-    return msgErro.innerText = `Só atendemos pássaros, gatos ou cachorros`;
+    return formulario.insertBefore(msgErro, botaoAgenda);
 }
-*/
 
 function validaCampos() {
     try {
@@ -103,11 +101,22 @@ function validaDoutor() {
 }
 */
 
-function exibeDoutor() {
-    try {
-        const drMarcel = gato.doutorMarcel(especie.value, doutorMarcel);
-        return section.appendChild(drMarcel);
-    } catch(erro) {
-        alert(`${erro}`);
+function validaDoutor() {
+    let msgDr;
+    if(especie.value === "Gato") {
+        msgDr = gato.doutorMarcel(doutorMarcel);
+    } else if(especie.value === "Cachorro") {
+        msgDr = cachorro.doutorRenan(doutorRenan);
+    } else if(especie.value === "Pássaro") {
+        msgDr = passaro.doutorBn(doutorBn);
     }
+    return exibeDoutor(msgDr);
+}
+
+function exibeDoutor(mensagem) {
+    const msgDoutor = document.createElement("p");
+    msgDoutor.classList.add("infoAgenda");
+    msgDoutor.innerHTML = mensagem;
+
+    section.appendChild(msgDoutor);
 }

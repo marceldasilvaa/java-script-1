@@ -8,16 +8,8 @@ export default class Gato extends Animal {
         this.#doutor = doutor;    
     }
 
-    doutorMarcel(especie, doutor) {
-        const msgDoutor = document.createElement("p");
-        msgDoutor.classList.add("infoAgenda");
-        msgDoutor.innerHTML = "";
-
-        if(especie == "Passaro") {
-            return msgDoutor.innerHTML += `O atendimento do seu gato está marcado com nosso doutor ${doutor}`;
-        } else {
-            throw new Error("Não foi possível marcar o atendimento");
-        }
+    doutorMarcel(doutor) {
+        return `O atendimento do seu gato está marcado com nosso doutor ${doutor}`;
     }
     
     get doutor() {

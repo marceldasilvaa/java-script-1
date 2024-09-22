@@ -12,7 +12,7 @@ export default class Validacao {
     }
 
     validaEspecie(especie) {
-        const regex = /^[A-Z][a-z]+$/;
+        const regex = /^[A-Z][a-zá-ú]+$/;
         if(regex.test(especie)) {
             console.log(especie);
         } else {
