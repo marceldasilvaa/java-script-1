@@ -8,10 +8,6 @@ export default class Passaro extends Animal {
         this.#doutor = doutor;
     }
 
-    doutorBn(doutor) {
-        return `O atendimento do seu pássaro está marcado com nosso doutor ${doutor}`;
-    }
-
     get doutor() {
         return this.#doutor;
     }

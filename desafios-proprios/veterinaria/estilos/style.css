@@ -109,8 +109,6 @@ p.msgErro {
     padding: 15px 50px;
     font-size: 1em;
     border-radius: 25px;
-    background: white;
-    color: var(--corCorpo);
     transition: .5s ease-out;
 }
 

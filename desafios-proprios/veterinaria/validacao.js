@@ -2,13 +2,11 @@ export default class Validacao {
     #especie;
     #idade;
     #raca;
-    #sexo;
 
-    constructor(especie, idade, raca, sexo) {
+    constructor(especie, idade, raca) {
         this.#especie = especie;
         this.#idade = idade;
         this.#raca = raca;
-        this.#sexo = sexo;
     }
 
     validaEspecie(especie) {
@@ -16,7 +14,7 @@ export default class Validacao {
         if(regex.test(especie)) {
             console.log(especie);
         } else {
-            throw new Error("O primeiro argumento deve conter uma letra maiúscula");
+            throw new Error("O primeiro argumento deve conter uma letra maiúscula!");
         }
     }
 
@@ -25,7 +23,7 @@ export default class Validacao {
         if(regex.test(idade)) {
             console.log(idade);
         } else {
-            throw new Error("Idade inválida");
+            throw new Error("Idade inválida!");
         }
     }
 
@@ -34,7 +32,7 @@ export default class Validacao {
         if(regex.test(raca)) {
             console.log(raca);
         } else {
-            throw new Error("O primeiro argumento deve ser uma letra maiúscula");
+            throw new Error("O primeiro argumento deve ser uma letra maiúscula!");
         }
     }
 }
