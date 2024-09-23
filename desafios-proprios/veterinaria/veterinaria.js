@@ -32,7 +32,7 @@ function agendar() {
     validaDoutor();
 }
 
-// função 
+// função de criar doutor
 function retornaDoutor() {
     let doutor;
     if(especie.value === "Cachorro") {
