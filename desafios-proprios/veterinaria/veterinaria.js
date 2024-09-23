@@ -15,6 +15,7 @@ const cachorro = new Cachorro();
 const gato = new Gato();
 const passaro = new Passaro();
 const formulario = document.querySelector("form");
+const section = document.querySelector(".informacoesAgendamento");
 const infos = document.querySelector(".infoAgenda");
 
 window.addEventListener('keypress', (e) => {
@@ -24,12 +25,14 @@ window.addEventListener('keypress', (e) => {
 });
 botaoAgenda.addEventListener('click', () => agendar());
 
+// função principal
 function agendar() {
     retornaDoutor();
     validaCampos();
     validaDoutor();
 }
 
+// função 
 function retornaDoutor() {
     let doutor;
     if(especie.value === "Cachorro") {
@@ -71,42 +74,11 @@ function validaSexo() {
     }
 }
 
-/*
-function validaDoutor() { 
-    if(especie.value === "Cachorro") {
-        try {
-            const exibeDoutorRenan = cachorro.doutorRenan(especie.value, doutorRenan);
-            return exibeDoutorRenan;
-        } catch(erro) {
-            return alert(`${erro}`);
-        }
-    } else if(especie.value === "Gato") {
-        try {
-            const exibeDoutorMarcel = gato.doutorMarcel(especie.value, doutorMarcel);
-            return exibeDoutorMarcel;
-        } catch(erro) {
-            return alert(`${erro}`);
-        }
-    } else if(especie.value === "Passaro") {
-        try {
-            const exibeDoutorBn = passaro.doutorBn(especie.value, doutorBn);
-            return exibeDoutorBn;
-        } catch(erro) {
-            return alert(`${erro}`);
-        }
-    }
-}
-*/
-
 function validaDoutor() {
-    let msgDoutor = "";
-    
     if(especie.value === "Gato") {
-        msgDoutor += `O atendimento do seu gato está marcado com nosso doutor Marcel`;
-    } else if(especie.value === "Cachorro") {
-        msgDoutor += `O atendimento do seu gato está marcado com nosso doutor Renan`;
-    } else if(especie.value === "Pássaro") {
-        msgDoutor += `O atendimento do seu gato está marcado com nosso doutor Bruno`;
+        infos = gato.drMarcel()
+        return section.appendChild(infos);
+    } else {
+        alert("Opa meu parceiro, tá errado!");
     }
-    infos.innerHTML = msgDoutor;
 }
