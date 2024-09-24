@@ -73,12 +73,3 @@ function validaSexo() {
         console.log(sexo.value);
     }
 }
-
-function validaDoutor() {
-    if(especie.value === "Gato") {
-        infos = gato.drMarcel()
-        return section.appendChild(infos);
-    } else {
-        alert("Opa meu parceiro, tá errado!");
-    }
-}
