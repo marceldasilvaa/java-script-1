@@ -28,7 +28,7 @@ export default class Validacao {
     }
 
     validaRaca(raca) {
-        const regex = /^[A-Z][a-z]+$/;
+        const regex = /^[A-ZÁ-Ú][a-zá-ú]+$/;
         if(regex.test(raca)) {
             console.log(raca);
         } else {
