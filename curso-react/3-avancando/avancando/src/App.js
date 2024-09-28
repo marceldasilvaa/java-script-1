@@ -29,7 +29,10 @@ function App() {
       {/* props */}
       <ShowUserName name={userName} />
       {/* destructuring */}
-      <CarDetails brand="Volvo" km={100000} cor="Preto" />
+      <CarDetails brand="Volvo" km={100000} cor="Preto" newCar={false}/>
+      {/* reaproveitando componentes */}
+      <CarDetails brand="Mercedes" km={0} cor="Cinza" newCar={true}/>
+      <CarDetails brand="Ford" km={50000} cor="Roxo" newCar={false}/>
     </div>
   );
 }
