@@ -7,10 +7,16 @@ import ConditionalRender from './components/ConditionalRender';
 import ShowUserName from './components/ShowUserName';
 import { useState } from 'react';
 import CarDetails from './components/CarDetails';
+import Fragment from './components/Fragment';
 
 function App() {
   const name = "Marcel";
   const [userName] = useState("Matheus");
+  const cars = [
+    {id: 1, brand: "Kia", km: 0, cor: "Branco", newCar: true},
+    {id: 2, brand: "Volvo", km: 89767, cor: "Roxo", newCar: false},
+    {id: 3, brand: "Volks", km: 100000, cor: "Preto", newCar: false},
+  ]
 
   return (
     <div className="App">
@@ -33,6 +39,17 @@ function App() {
       {/* reaproveitando componentes */}
       <CarDetails brand="Mercedes" km={0} cor="Cinza" newCar={true}/>
       <CarDetails brand="Ford" km={50000} cor="Roxo" newCar={false}/>
+      {/* loop em array de objetos */}
+      {(cars.map((car) => (
+        <CarDetails 
+          brand={car.brand}
+          km={car.km}
+          cor={car.cor}
+          newCar={car.newCar}
+        />
+      )))}
+      {/* utilizando o fragment */}
+      <Fragment propFragment="TESTE" />
     </div>
   );
 }
