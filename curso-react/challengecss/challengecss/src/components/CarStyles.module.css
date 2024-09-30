@@ -1,0 +1,13 @@
+.tituloSecundario {
+    background-color: black;
+    color: white;
+}
+
+.detalhes {
+    font-weight: bold;
+}
+
+.new {
+    font-weight: bold;
+    color: green;
+}
