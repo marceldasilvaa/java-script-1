@@ -6,59 +6,44 @@
       "price": 59.9
     },
     {
-      "id": 2,
-      "name": "Calça Vermelha",
-      "price": 90
-    },
-    {
-      "id": 3,
-      "name": "Boné aba reta",
-      "price": 29.9
-    },
-    {
       "name": "Bermuda",
       "price": "20",
       "id": 4
     },
     {
-      "name": "Tênis",
-      "price": "89.90",
-      "id": 5
-    },
-    {
-      "name": "Capa de chuva",
-      "price": "50.50",
-      "id": 6
-    },
-    {
-      "name": "Short ",
-      "price": "50",
-      "id": 7
-    },
-    {
-      "name": "Short ",
-      "price": "50",
-      "id": 8
-    },
-    {
-      "name": "Chinelo",
-      "price": "19.90",
-      "id": 9
-    },
-    {
-      "name": "Anel",
-      "price": "100",
-      "id": 10
-    },
-    {
-      "name": "Cordão",
-      "price": "49",
-      "id": 11
-    },
-    {
       "name": "Chinelo",
       "price": "99",
       "id": 12
+    },
+    {
+      "name": "Touca",
+      "price": "25",
+      "id": 13
+    },
+    {
+      "name": "Chinelo ",
+      "price": "20",
+      "id": 21
+    },
+    {
+      "name": "Chinelo ",
+      "price": "60",
+      "id": 22
+    },
+    {
+      "name": "Moletom ",
+      "price": "80",
+      "id": 23
+    },
+    {
+      "name": "Cordão",
+      "price": "67",
+      "id": 25
+    },
+    {
+      "name": "Camisa",
+      "price": "90",
+      "id": 26
     }
   ]
 }
