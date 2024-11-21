@@ -3,13 +3,15 @@ import "./App.css";
 // import rotas react
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+// components
+import Navbar from "./components/Navbar";
+
 // import pages
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Product from "./pages/Product";
-
-// components
-import Navbar from "./components/Navbar";
+import Info from "./pages/Info";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -24,6 +26,10 @@ function App() {
             <Route path="/about" element={<About />} />
             {/* 4 - rota dinamica */}
             <Route path="/products/:id" element={<Product />} />
+            {/* {nested routes} */}
+            <Route path="/products/:id/info" element={<Info />} />
+            {/* {7 - no match found - 404 error} */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </div>
