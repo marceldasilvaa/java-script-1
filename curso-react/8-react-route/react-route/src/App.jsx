@@ -1,7 +1,7 @@
 import "./App.css";
 
 // import rotas react
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 // components
 import Navbar from "./components/Navbar";
@@ -35,6 +35,8 @@ function App() {
             <Route path="/search" element={<Search />} />
             {/* {9 - search} */}
             <Route path="/search" element={<Search />} />
+            {/* {redirect} */}
+            <Route path="/company" element={<Navigate to="/about" />} />
             {/* {7 - no match found - 404 error} */}
             <Route path="*" element={<NotFound />} />
           </Routes>
