@@ -5,6 +5,9 @@ import ChangeCounter from "../components/ChangeCounter";
 // 4 - hooks
 import { useCounterContext } from "../hooks/useCounterContext";
 
+// 5 - context mais complexo
+import { useTitleColorContext } from "../hooks/useTitleColorContext";
+
 const Home = () => {
   // const { counter } = useContext(CounterContext);
 
