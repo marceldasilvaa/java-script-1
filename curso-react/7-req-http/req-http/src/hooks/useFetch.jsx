@@ -70,8 +70,7 @@ export const useFetch = (url) => {
         const res = await fetch(...fetchOptions);
 
         json = await res.json();
-
-        setCallFetch(json);
+        
       } else if (method === "DELETE") {
         const deleteUrl = `${url}/${itemId}`;
 
