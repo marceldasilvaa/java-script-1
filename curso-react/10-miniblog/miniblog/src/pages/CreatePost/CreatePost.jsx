@@ -19,7 +19,7 @@ const CreatePost = () => {
 
   const { insertDocument, response } = useInsertDocument("posts");
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -34,26 +34,28 @@ const CreatePost = () => {
     }
 
     // criar array de tags
-    const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase())
+    const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
 
     if (!title || !image || !tags || !body) {
-      return setFormError("Por favor, preencha todos os campos.")
+      return setFormError("Por favor, preencha todos os campos.");
     }
 
     // checar todos os valores
-    if (formError) return;
+    if (formError) {
+      return;
+    }
 
     insertDocument({
       title,
       image,
       body,
-      tags,
+      tagsArray,
       uid: user.uid,
       createdBy: user.displayName,
     });
 
     // redirect to home page
-    navigate("/")
+    navigate("/");
   };
 
   return (
