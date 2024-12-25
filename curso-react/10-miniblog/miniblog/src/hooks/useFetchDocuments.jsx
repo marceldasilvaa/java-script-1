@@ -41,16 +41,16 @@ export const useFecthDocuments = (docCollection, search = null, uid = null) => {
           );
         } else {
           q = await query(collectionRef, orderBy("createdAt", "desc"));
-
-          await onSnapshot(q, (querySnapshot) => {
-            setDocuments(
-              querySnapshot.docs.map((doc) => ({
-                id: doc.id,
-                ...doc.data(),
-              }))
-            );
-          });
         }
+
+        await onSnapshot(q, (querySnapshot) => {
+          setDocuments(
+            querySnapshot.docs.map((doc) => ({
+              id: doc.id,
+              ...doc.data(),
+            }))
+          );
+        });
 
         setLoading(false);
       } catch (error) {
