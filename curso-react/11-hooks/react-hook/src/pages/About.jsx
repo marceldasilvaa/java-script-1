@@ -1,11 +1,13 @@
-
+import { useContext } from "react";
+import { SomeContext } from "../hooks/HookUseContext";
 
 const About = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  const { contextValue } = useContext(SomeContext);
 
-export default About
+  return <div>
+    <h2>useContext</h2>
+    <p>Valor do context: {contextValue}</p>
+  </div>;
+};
+
+export default About;

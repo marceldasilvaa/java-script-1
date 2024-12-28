@@ -1,3 +1,7 @@
 * {
   text-align: center;
 }
+
+body {
+  padding-bottom: 500px;
+}
