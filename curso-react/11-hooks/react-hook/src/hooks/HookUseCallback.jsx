@@ -6,7 +6,7 @@ const HookUseCallback = () => {
   const [counter, setCounter] = useState(0);
 
   const getItemsFromDataBase = useCallback(() => {
-    return ["a", "b", "c"];
+    return ["a", "b", "c", "d"];
   }, []);
 
   return (
