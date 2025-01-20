@@ -16,12 +16,13 @@ const generateToken = (id) => {
 const register = async (req, res) => {
   const { name, email, password } = req.body;
 
-  // check if user exists
   const user = await User.findOne({ email });
 
+  // check if the user already exists
   if (user) {
-    res.status(422).json({ errors: ["Por favor, utilize outro email."] });
-    return;
+    return res
+      .status(422)
+      .json({ errors: ["Por favor, utilize outro email."] });
   }
 
   // generate password hash
@@ -37,11 +38,11 @@ const register = async (req, res) => {
 
   // if user was created successfully, return the token
   if (!newUser) {
-    res
-      .status(422)
-      .json({ errors: ["Houve um erro, por favor tente mais tarde."] });
+    return res.status(422).json({
+      errors: ["Houve um erro, por favor tente mais tarde."],
+    });
   } else {
-    res.status(201).json({
+    return res.status(201).json({
       _id: newUser._id,
       token: generateToken(newUser._id),
     });

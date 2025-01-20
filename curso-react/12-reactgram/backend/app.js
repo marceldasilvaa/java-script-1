@@ -19,11 +19,10 @@ app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 
 // DB connection
-require("./config/db.js")
+require("./config/db.js");
 
 // routes
 const router = require("./routes/Router.js");
-
 app.use(router);
 
 app.listen(port, () => {
