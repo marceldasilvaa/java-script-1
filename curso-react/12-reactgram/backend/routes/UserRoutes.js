@@ -14,7 +14,7 @@ const {
   userCreateValidation,
   loginValidation,
 } = require("../middlewares/userValidations");
-const { authGuard } = require("../middlewares/authGuard");
+const authGuard = require("../middlewares/authGuard");
 
 // routes
 router.post("/register", userCreateValidation(), validate, register);
