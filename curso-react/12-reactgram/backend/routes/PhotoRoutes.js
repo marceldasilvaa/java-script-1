@@ -8,7 +8,7 @@ const validate = require("../middlewares/handleValidation");
 const { imageUpload } = require("../middlewares/imageUpload");
 
 // controller
-const { insertPhoto, deletePhoto } = require("../controllers/PhotoController");
+const { insertPhoto, deletePhoto, getAllPhotos } = require("../controllers/PhotoController");
 
 // routes
 router.post(
@@ -20,5 +20,6 @@ router.post(
   insertPhoto
 );
 router.delete("/:id", authGuard, deletePhoto);
+router.get("/", authGuard, getAllPhotos)
 
 module.exports = router;
