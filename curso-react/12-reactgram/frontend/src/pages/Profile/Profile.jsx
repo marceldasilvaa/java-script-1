@@ -18,6 +18,7 @@ import {
   publishPhoto,
   resetMessage,
   getUserPhotos,
+  deletePhoto,
 } from "../../slices/PhotoSlice";
 
 const Profile = () => {
@@ -51,6 +52,12 @@ const Profile = () => {
     return <p>Carregando...</p>;
   }
 
+  const resetComponentMessage = () => {
+    setTimeout(() => {
+      dispatch(resetMessage());
+    }, 2000);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -70,9 +77,14 @@ const Profile = () => {
 
     setTitle("");
 
-    setTimeout(() => {
-      dispatch(resetMessage());
-    }, 2000);
+    resetComponentMessage();
+  };
+
+  // delete a photo
+  const handleDelete = (id) => {
+    dispatch(deletePhoto(id));
+
+    resetComponentMessage();
   };
 
   const handleFile = (e) => {
@@ -138,7 +150,7 @@ const Profile = () => {
                       <BsFillEyeFill />
                     </Link>
                     <BsPencilFill />
-                    <BsXLg />
+                    <BsXLg onClick={() => handleDelete(photo._id)} />
                   </div>
                 ) : (
                   <Link to={`/photos/${photo._id}`} className="btn">

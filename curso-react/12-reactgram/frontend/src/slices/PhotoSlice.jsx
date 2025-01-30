@@ -89,7 +89,7 @@ export const photoSlice = createSlice({
         (state.loading = false),
           (state.success = true),
           (state.error = null),
-          (state.photo = action.payload);
+          (state.photos = action.payload);
       })
       .addCase(deletePhoto.pending, (state) => {
         (state.loading = true), (state.error = true);
