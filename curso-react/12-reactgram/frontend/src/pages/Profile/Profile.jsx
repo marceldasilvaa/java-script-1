@@ -171,7 +171,10 @@ const Profile = () => {
           <div className="editPhoto hide" ref={editPhotoForm}>
             <p>Editando:</p>
             {editImage && (
-              <img src={`/${upload}/photos/${editImage}`} alt={editTitle} />
+              <img
+                src={`http://localhost:5000/uploads/photos/${editImage}`}
+                alt={editTitle}
+              />
             )}
             <form onSubmit={handleUpdate}>
               <input
