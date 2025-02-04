@@ -124,6 +124,15 @@ export const comment = createAsyncThunk(
   }
 );
 
+// get all photos
+export const getPhotos = createAsyncThunk("photo/getall", async (_, thunkAPI) => {
+  const token = thunkAPI.getState().auth.user.token;
+
+  const data = await photoService.getPhotos(token);
+
+  return data;
+});
+
 export const photoSlice = createSlice({
   name: "photo",
   initialState,
@@ -135,80 +144,87 @@ export const photoSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(publishPhoto.pending, (state) => {
-        (state.loading = true), (state.error = true);
+        state.loading = true;
+        state.error = true;
       })
       .addCase(publishPhoto.fulfilled, (state, action) => {
-        (state.loading = false),
-          (state.success = true),
-          (state.error = null),
-          (state.photo = action.payload),
-          state.photos.unshift(state.photo),
-          (state.message = "Foto adicionada com sucesso!");
+        state.loading = false;
+        state.success = true;
+        state.error = null;
+        state.photo = action.payload;
+        state.photos.unshift(state.photo);
+        state.message = "Foto adicionada com sucesso!";
       })
       .addCase(publishPhoto.rejected, (state, action) => {
-        (state.loading = false),
-          (state.error = action.payload),
-          (state.photo = {});
+        state.loading = false;
+        state.error = action.payload;
+        state.photo = {};
       })
       .addCase(getUserPhotos.pending, (state) => {
-        (state.loading = true), (state.error = false);
+        state.loading = true;
+        state.error = false;
       })
       .addCase(getUserPhotos.fulfilled, (state, action) => {
-        (state.loading = false),
-          (state.success = true),
-          (state.error = null),
-          (state.photos = action.payload);
+        state.loading = false;
+        state.success = true;
+        state.error = null;
+        state.photos = action.payload;
       })
       .addCase(deletePhoto.pending, (state) => {
-        (state.loading = true), (state.error = true);
+        state.loading = true;
+        state.error = true;
       })
       .addCase(deletePhoto.fulfilled, (state, action) => {
-        (state.loading = false),
-          (state.success = true),
-          (state.error = null),
-          (state.photos = state.photos.filter((photo) => {
-            return photo._id !== action.payload.id;
-          })),
-          (state.message = action.payload.message);
+        state.loading = false;
+        state.success = true;
+        state.error = null;
+        state.photos = state.photos.filter((photo) => {
+          return photo._id !== action.payload.id;
+        });
+        state.message = action.payload.message;
       })
       .addCase(deletePhoto.rejected, (state, action) => {
-        (state.loading = false),
-          (state.error = action.payload),
-          (state.photo = {});
+        state.loading = false;
+        state.error = action.payload;
+        state.photo = {};
       })
       .addCase(updatePhoto.pending, (state) => {
-        (state.loading = true), (state.error = true);
+        state.loading = true;
+        state.error = true;
       })
       .addCase(updatePhoto.fulfilled, (state, action) => {
-        (state.loading = false),
-          (state.success = true),
-          (state.error = null),
-          state.photos.map((photo) => {
-            photo._id === action.payload.photo._id
-              ? {
-                  ...photo,
-                  title: action.payload.photo.title,
-                }
-              : photo;
-          }),
+        state.loading = false;
+        state.success = true;
+        state.error = null;
+        state.photos.map((photo) => {
+          photo._id === action.payload.photo._id
+            ? {
+                ...photo,
+                title: action.payload.photo.title,
+              }
+            : photo;
+        }),
           (state.message = action.payload.message);
       })
       .addCase(updatePhoto.rejected, (state, action) => {
-        (state.loading = false),
-          (state.error = action.payload),
-          (state.photo = {});
+        state.loading = false;
+        state.error = action.payload;
+        state.photo = {};
       })
       .addCase(getPhoto.pending, (state) => {
-        (state.loading = true), (state.error = false);
+        state.loading = true;
+        state.error = false;
       })
       .addCase(getPhoto.fulfilled, (state, action) => {
-        (state.loading = false),
-          (state.success = true),
-          (state.error = null),
-          (state.photo = action.payload);
+        state.loading = false;
+        state.success = true;
+        state.error = null;
+        state.photo = action.payload;
       })
       .addCase(like.fulfilled, (state, action) => {
-        (state.loading = false), (state.success = true), (state.error = null);
+        state.loading = false;
+        state.success = true;
+        state.error = null;
 
         if (state.photo && state.photo._id === action.payload.photoId) {
           state.photo.likes.push(action.payload.userId);
@@ -226,7 +242,8 @@ export const photoSlice = createSlice({
           (state.message = action.payload.message);
       })
       .addCase(like.rejected, (state, action) => {
-        (state.loading = false), (state.error = action.payload);
+        state.loading = false;
+        state.error = action.payload;
       })
       .addCase(comment.fulfilled, (state, action) => {
         state.loading = false;
@@ -236,7 +253,18 @@ export const photoSlice = createSlice({
         state.message = action.payload.message;
       })
       .addCase(comment.rejected, (state, action) => {
-        (state.loading = false), (state.error = action.payload);
+        state.loading = false;
+        state.error = action.payload;
+      })
+      .addCase(getPhotos.pending, (state) => {
+        state.loading = true;
+        state.error = false;
+      })
+      .addCase(getPhotos.fulfilled, (state, action) => {
+        state.loading = false;
+        state.success = true;
+        state.error = null;
+        state.photos = action.payload;
       });
   },
 });
