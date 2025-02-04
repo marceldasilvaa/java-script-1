@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 
 // insert a photo, with an user related to it
 const insertPhoto = async (req, res) => {
-  const title = req.title;
+  const { title } = req.body;
   const image = req.file.filename;
 
   const userReq = req.user;

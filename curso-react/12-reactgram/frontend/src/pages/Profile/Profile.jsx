@@ -67,9 +67,6 @@ const Profile = () => {
       image,
     };
 
-    console.log("Title:", title); // Verifique o valor do título
-    console.log("Image:", image); // Verifique o valor da imagem
-
     // build form data
     const formData = new FormData();
 
