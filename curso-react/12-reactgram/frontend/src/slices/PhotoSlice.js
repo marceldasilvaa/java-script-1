@@ -160,7 +160,7 @@ export const photoSlice = createSlice({
     builder
       .addCase(publishPhoto.pending, (state) => {
         state.loading = true;
-        state.error = true;
+        state.error = false;
       })
       .addCase(publishPhoto.fulfilled, (state, action) => {
         state.loading = false;
