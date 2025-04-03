@@ -245,7 +245,7 @@ export const photoSlice = createSlice({
           state.photo.likes.push(action.payload.userId);
         }
 
-        (state.photos = state.photos.map((photo) => {
+        state.photos = state.photos.map((photo) => {
           if (photo._id === action.payload.photoId) {
             return {
               ...photo,
@@ -253,8 +253,8 @@ export const photoSlice = createSlice({
             };
           }
           return photo;
-        })),
-          (state.message = action.payload.message);
+        });
+        state.message = action.payload.message;
       })
       .addCase(like.rejected, (state, action) => {
         state.loading = false;
