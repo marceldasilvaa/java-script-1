@@ -187,7 +187,7 @@ export const photoSlice = createSlice({
       })
       .addCase(deletePhoto.pending, (state) => {
         state.loading = true;
-        state.error = true;
+        state.error = false;
       })
       .addCase(deletePhoto.fulfilled, (state, action) => {
         state.loading = false;
@@ -218,8 +218,8 @@ export const photoSlice = createSlice({
                 title: action.payload.photo.title,
               }
             : photo;
-        }),
-          (state.message = action.payload.message);
+        });
+        state.message = action.payload.message;
       })
       .addCase(updatePhoto.rejected, (state, action) => {
         state.loading = false;
